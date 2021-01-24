@@ -3,35 +3,40 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>carmanillustrations.com/about-me/</loc>
+    <loc>carman-terblanche.github.io/about-me/</loc>
     <lastmod>2020-11-20T10:39:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/cv/</loc>
+    <loc>carman-terblanche.github.io/cv/</loc>
     <lastmod>2020-11-20T10:39:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/rates/</loc>
+    <loc>carman-terblanche.github.io/education/</loc>
     <lastmod>2020-11-20T10:39:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/skills/</loc>
+    <loc>carman-terblanche.github.io/rates/</loc>
     <lastmod>2020-11-20T10:39:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/</loc>
+    <loc>carman-terblanche.github.io/skills/</loc>
+    <lastmod>2020-11-20T10:39:03+02:00</lastmod>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/categories/</loc>
+    <loc>carman-terblanche.github.io/</loc>
   </url>
   
   <url>
-    <loc>carmanillustrations.com/tags/</loc>
+    <loc>carman-terblanche.github.io/categories/</loc>
+  </url>
+  
+  <url>
+    <loc>carman-terblanche.github.io/tags/</loc>
   </url>
   
 </urlset>

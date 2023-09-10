@@ -106,50 +106,68 @@
     </header> <!-- end of header -->
     <!-- end of header -->
 <!-- Gallery -->
-<div class="row">
-    <div class="col-lg-4 col-md-12 mb-4 mb-lg-0">
-      <img
-        src="/images/photo_1.jfif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Boat on Calm Water"
-      />
-  
-      <img
-        src="/images/photo_2.jfif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Wintry Mountain Landscape"
-      />
+<div class="row"> 
+    <div class="column">
+      <img src="images/photo_1.jfif">
+      <img src="images/photo_2.jfif">
+      <img src="images/photo_3.jfif">
+      <img src="images/photo_10.JPG">
     </div>
-  
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img
-        src="/images/photo_3.jfif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Mountains in the Clouds"
-      />
-  
-      <img
-        src="/images/photo_4.JPG"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Boat on Calm Water"
-      />
-    </div>
-  
-    <div class="col-lg-4 mb-4 mb-lg-0">
-      <img
-        src="/images/photo_5.jfif"
-        class="w-100 shadow-1-strong rounded mb-4"
-        alt="Waves at Sea"
-      />
-    </div>
-    <div class="col-lg-4 mb-4 mb-lg-0">
-        <img
-          src="/images/birds.JPG"
-          class="w-100 shadow-1-strong rounded mb-4"
-          alt="Waves at Sea"
-        />
-      </div>
+    <div class="column">
+
+      <img src="images/photo_4.JPG">
+      <img src="images/photo_6.JPG">
+
+
+    </div> 
+    <div class="column">
+        <img src="images/photo_7.JPG">
+        <img src="images/photo_8.jpeg">
+        <img src="images/photo_9.jpeg">
+      </div> 
+      <div class="column">
+        <img src="images/birds.JPG">
+        <img src="images/photo_5.jfif">
+
+      </div> 
   </div>
+
+  <style>
+    .row {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 0 4px;
+}
+
+/* Create four equal columns that sits next to each other */
+.column {
+  flex: 25%;
+  max-width: 25%;
+  padding: 0 4px;
+}
+
+.column img {
+  margin-top: 8px;
+  vertical-align: middle;
+  width: 100%;
+}
+
+/* Responsive layout - makes a two column-layout instead of four columns */
+@media screen and (max-width: 800px) {
+  .column {
+    flex: 50%;
+    max-width: 50%;
+  }
+}
+
+/* Responsive layout - makes the two columns stack on top of each other instead of next to each other */
+@media screen and (max-width: 600px) {
+  .column {
+    flex: 100%;
+    max-width: 100%;
+  }
+}
+  </style>
   <!-- Gallery -->
    
 

@@ -2215,7 +2215,6 @@ a:hover.back-to-top {
 .static-slider8 .btn-danger-gradiant {
   background: #9d2235;
   background: #9d2235;
-  );
   background: #9d2235;
   background: #9d2235;
   background: #9d2235;
@@ -2233,6 +2232,19 @@ a:hover.back-to-top {
   font-size: 16px;
 }
 
+
+.primary-btn {
+  display: inline-block;
+  font-size: 15px;
+  font-family: "Play", sans-serif;
+  font-weight: 700;
+  padding: 14px 32px 12px;
+  color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 1;
+}
 /*****************************/
 /*     21. Music Page        */
 /*****************************/

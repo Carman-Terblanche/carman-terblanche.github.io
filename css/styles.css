@@ -46,7 +46,9 @@ html {
 body,
 p {
   color: #555;
-  font: 400 1rem/1.625rem "Open Sans", sans-serif;
+  height: 100%;
+  font-family: "Josefin Sans", sans-serif;
+  -webkit-font-smoothing: antialiased;
 }
 
 .p-large {
@@ -85,6 +87,10 @@ h5 {
   color: #333;
   font: 700 1.125rem/1.5rem "Open Sans", sans-serif;
   letter-spacing: -0.1px;
+  text-decoration: none;
+}
+h5:hover{
+  opacity: 65%;
 }
 
 h6 {

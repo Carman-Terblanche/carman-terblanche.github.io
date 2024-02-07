@@ -45,7 +45,7 @@ html {
 }
 body,
 p {
-  color: #555;
+  color: #111111;
   height: 100%;
   font-family: "Josefin Sans", sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -131,10 +131,6 @@ a {
   text-decoration: none;
 }
 
-a:hover {
-  color: #555;
-  text-decoration: underline;
-}
 
 a.white {
   color: #fff;
@@ -2198,7 +2194,7 @@ a:hover.back-to-top {
 @import url(//fonts.googleapis.com/css?family=Montserrat:300,700);
 .static-slider8 {
   font-family: "Montserrat", sans-serif;
-  color: #8d97ad;
+  color: #111111;
   font-weight: 300;
   padding: 80px 0 0;
   overflow: hidden;
@@ -2238,18 +2234,22 @@ a:hover.back-to-top {
   font-size: 16px;
 }
 
-
+/* buttons */
 .primary-btn {
+  border: 2px solid #00bfe7;
   display: inline-block;
+  background-color: #00bfe7;
   font-size: 15px;
   font-family: "Play", sans-serif;
   font-weight: 700;
   padding: 14px 32px 12px;
-  color: #ffffff;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
+}
+.primary-btn:hover{
+opacity: 60%;
 }
 /*****************************/
 /*     21. Music Page        */

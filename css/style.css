@@ -102,7 +102,7 @@ a:hover,
 a:focus {
   text-decoration: none;
   outline: none;
-  color: #fff;
+  color: #555;
 }
 
 ul,
@@ -175,6 +175,7 @@ ol {
 
 /* buttons */
 .primary-btn {
+  border: 2px solid #00bfe7;
   display: inline-block;
   font-size: 15px;
   font-family: "Play", sans-serif;
@@ -186,6 +187,9 @@ ol {
   position: relative;
   z-index: 1;
 }
+.primary-btn:hover{
+  background-color: #00bfe7;
+}
 
 .primary-btn:hover:before {
   height: 100%;
@@ -195,6 +199,7 @@ ol {
   height: 100%;
   width: 100%;
 }
+/*
 .primary-btn:before {
   position: absolute;
   left: 0;
@@ -223,7 +228,7 @@ ol {
   -o-transition: all, 0.7s;
   transition: all, 0.7s;
 }
-
+*/
 .site-btn {
   font-size: 15px;
   color: #ffffff;

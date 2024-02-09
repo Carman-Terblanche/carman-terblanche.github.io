@@ -2224,25 +2224,40 @@ a:hover.back-to-top {
 }
 
 /* buttons */
-.primary-btn {
-  border: 2px solid #00bfe7;
+.primary-btn-index {
+  border: 2px solid #333;
   display: inline-block;
-  background-color: #00bfe7;
   font-size: 15px;
   font-family: "Play", sans-serif;
   font-weight: 700;
   padding: 14px 32px 12px;
+  color: #333;
   text-transform: uppercase;
   letter-spacing: 2px;
   position: relative;
   z-index: 1;
 }
-.primary-btn:hover{
-opacity: 60%;
+.primary-btn-index:hover{
+  background-color: #333;
+  color:white;
+}
+
+.primary-btn-index:hover:before {
+  height: 100%;
+  width: 100%;
+}
+.primary-btn-index:hover:after {
+  height: 100%;
+  width: 100%;
 }
 /*****************************/
 /*     21. Music Page        */
 /*****************************/
 .music-grid {
   margin-top: 64px;
+}
+
+/*header*/
+.header-cta{
+  z-index: 10;
 }

@@ -1,235 +1,383 @@
-<!DOCTYPE html>
+<!-- /*
+* Template Name: Snap
+* Template Author: Untree.co
+* Tempalte URI: https://untree.co/
+* License: https://creativecommons.org/licenses/by/3.0/
+*/ -->
+<!doctype html>
 <html lang="en">
 <head>
- <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-2CJ3CLN6CR">
-</script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="author" content="Untree.co">
+  <link rel="shortcut icon" href="favicon.png">
 
-  gtag('config', 'G-2CJ3CLN6CR');
-</script>
-    <!-- END Google Analytics Tag -->
+  <meta name="description" content="" />
+  <meta name="keywords" content="" />
+  
 
-
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="This is my portfolio for all my creative projects, from video editing to photography and music.">
-    <meta name="author" content="Video editor, visual artist, musician">
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-	<meta property="og:site_name" content="" /> <!-- website name -->
-	<meta property="og:site" content="" /> <!-- website link -->
-	<meta property="og:title" content=""/> <!-- title shown in the actual shared post -->
-	<meta property="og:description" content="" /> <!-- description shown in the actual shared post -->
-	<meta property="og:image" content="" /> <!-- image link, make sure it's jpg -->
-	<meta property="og:url" content="" /> <!-- where do you want your post to link to -->
-	<meta property="og:type" content="article" />
-
-    <!-- Website Title -->
-    <title>Rêver Designs</title>
-    
-    <!-- Styles -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext" rel="stylesheet">
-    <link href="css/bootstrap.css" rel="stylesheet">
-    <link href="css/fontawesome-all.css" rel="stylesheet">
-    <link href="css/swiper.css" rel="stylesheet">
-	<link href="css/magnific-popup.css" rel="stylesheet">
-	<link href="css/styles.css" rel="stylesheet">
-    <link rel="stylesheet" href="css/magnific-popup.css" type="text/css">
-    <link rel="stylesheet" href="css/style.css" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600, 700,900|Oswald:400,700" rel="stylesheet">
 
 
-	
-	<!-- Favicon  -->
+  <link rel="stylesheet" href="fonts/icomoon/style.css">
+
+  <link rel="stylesheet" href="css/bootstrap.min.css">
+  <link rel="stylesheet" href="css/magnific-popup.css">
+  <link rel="stylesheet" href="css/jquery-ui.css">
+  <link rel="stylesheet" href="css/owl.carousel.min.css">
+  <link rel="stylesheet" href="css/owl.theme.default.min.css">
+  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
+
+  <link rel="stylesheet" href="css/aos.css">
+  <link rel="stylesheet" href="css/fancybox.min.css">
+
+  <link rel="stylesheet" href="css/style.css">
+  <title>Rêver</title>
+
+
 </head>
-<body data-spy="scroll" data-target=".fixed-top">
-    
-    <!-- Page Preloder -->
-    <div id="preloder">
-        <div class="loader"></div>
+<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
+
+
+  <div class="site-wrap">
+
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
     </div>
-    <!-- end of preloader -->
-    
 
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top" style="padding-left: 2.3rem; padding-right: 2.3rem;">
-        <div class="container">
+    <header class="header-bar d-flex d-lg-block align-items-center site-navbar-target" data-aos="fade-right">
+      <div class="site-logo">
+        <a href="index.html">Carman Terblanche</a>
+      </div>
 
-            <!-- Text Logo - Use this if you don't have a graphic logo -->
-            <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
+      <div class="d-inline-block d-lg-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle "><span class="icon-menu h3"></span></a></div>
 
-            <!-- Image Logo -->
-            <a class="navbar-brand logo-image" href="index.html"><img src="images/signature.png" style="display: block;
-                max-width: 100%;
-                height: 3.5rem;max-width: 100%;" id="title"></a> 
-            
-            <!-- Mobile Menu Toggle Button -->
-            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-awesome fas fa-bars"></span>
-                <span class="navbar-toggler-awesome fas fa-times"></span>
-            </button>
-            <!-- end of mobile menu toggle button -->
+      <div class="main-menu">
+        <ul class="js-clone-nav">
+          <li><a href="#section-home" class="nav-link">Home</a></li>
+          <li><a href="#section-photos" class="nav-link">Work</a></li>
+          <li><a href="#section-about" class="nav-link">About</a></li>
+          <li><a href="/docs/resume.pdf" class="nav-link">Resume</a></li>
+          <li><a href="music.html" class="nav-link">Music</a></li>
+        </ul>
+        <ul class="social js-clone-nav">
+          <li><a href="https://www.instagram.com/carman_terblanche?igsh=bW5pNG54cmc3ZWYx&utm_source=qr"><span class="icon-instagram"></span></a></li>
+          <li><a href="https://www.linkedin.com/in/carman-terblanche/"><span class="icon-linkedin"></span></a></li>
+        </ul>
+      </div>
+    </header> 
+    <main class="main-content">
 
-            <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-                <ul class="navbar-nav ml-auto">
-                    
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/video.html">video</a> 
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/photography.html">photography</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/music.html">music</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/docs/resume.pdf">resume</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link page-scroll" href="/contact.html">contact</a>
-                    </li>
-                </ul>
+      <section class="site-section-hero bg-image mb-5" style="background-image: url('images/index-carman.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
+        <div class="row justify-content-center align-items-center">
+          <div class="col-md-7 text-center">
+            <h1 class=" heading text-uppercase text-white" data-aos="fade-up">Carman Terblanche</h1>
+            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">Video Editor Portfolio</a></p>
+            <p data-aos="fade-up" data-aos-delay="100"><a href="#footer" class="btn btn-primary btn-md smoothscroll">Hire Me!</a></p>
+          </div>
+        </div>
+      </section>
+
+      <div class="container-fluid site-section">
+
+
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="heading">Work</h2>
+          </div>
+        </div>
+
+        <section class="row align-items-stretch photos" id="section-photos">
+          <div class="col-12">
+            <div class="row align-items-stretch">
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://youtu.be/dKohMhhg-LE" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/euphoria-1.png" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://youtu.be/Bw2Bi8ND8mg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/joker.png" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://youtu.be/JTfagcXP7LA" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/sinking.jpg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="https://youtu.be/2DuBbgU499A" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/best.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="https://youtu.be/2qx83uY1gzk" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/tammy.png" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://youtu.be/bv_DsR6yZDo" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/taxi.png" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
             </div>
-        </div> <!-- end of container -->
-    </nav> <!-- end of navbar -->
-    <!-- end of navigation -->
 
+          </div>
+        </section> <!-- #section-photos -->
+      </div>
 
-    <!-- Header -->
-    <header id="header" class="header">
-        <img src="images/index-carman.jpg" class="img-fluid" height="20%" alt="...">
-    </header> <!-- end of header -->
-    <!-- end of header -->
+      <div class="container-fluid site-section">
 
-    <div class="container-fluid" style="padding: 1.5em; ">
-        <div class="row align-items-center">
-            <div class="col-lg-6">
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2>
-                        Hi, I'm Carman
-                    </h2>
-                </div>
-                <div class="col-lg-6" style="text-align: right;">
-                    <span><a href="https://www.instagram.com/carman_terblanche/"><img src="images/instagram.svg" width="25px"></a></span>
-                </div>
+        <div class="row mb-3">
+          <div class="col-12 text-center">
+            <h2 class="heading">Photos</h2>
+          </div>
+        </div>
+
+        <section class="row align-items-stretch photos" id="section-photos">
+          <div class="col-12">
+            <div class="row align-items-stretch">
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="images/photo_14.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_14.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="images/photo_16.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_16.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="images/photo_4.JPG" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_4.JPG" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="images/photo_7.JPG" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_7.JPG" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="images/photo_13.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_13.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="images/photo_15.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_15.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
+                <a href="images/photo_11.JPG" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_11.JPG" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <a href="images/photo_18.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_18.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
+              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="images/photo_17.jpeg" class="d-block photo-item" data-fancybox="gallery">
+                  <img src="images/photo_17.jpeg" alt="Image" class="img-fluid mb-0">
+                  <div class="photo-text-more">
+                    <span class="icon icon-eye"></span>
+                  </div>
+                </a>
+              </div>
             </div>
-                    <p class="lead" style="text-align: justify; color: #333;">Since a young age, I've been an extremely creatively driven person.
-                        Whether it's music, drawing, photography, or anything I could get my hands on. I eventually 
-                        studied Computer and Information Sciences at Monash University with a major in Mobile Systems. 
-                        Although it's an interesting field, I cannot give up my desires to create art. I created a YouTube channel 
-                        in 2021 where I made comedy content and honed a lot of my editing skills. I used those skills to make videos 
-                        for international and local clients. I am now on the lookout for amazing projects such as music videos, film projects, 
-                        or social media. 
-                    </p>
-                    <strong><h5><a href="https://youtu.be/chYBMOiJus4">Watch Video Introduction</a></h5></strong>
-                    <div style="padding-top: 1.5em; padding-bottom: 1.5em">
-                        <a href="/contact.html" class="primary-btn-index">Hire Me!</a>
+          </div>
+        </section> <!-- #section-photos -->
+
+        <section class="site-section" id="section-about">
+          <div class="container">
+            <div class="row justify-content-center">
+
+              <div class="col-md-8">
+
+                <!-- <h2 class="heading">About</h2> -->
+
+                <img src="images/skateboard-2.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle">
+
+                <div data-aos="fade-up"  data-aos-delay="100">
+                  <h2 class="">Hi I'm Carman</h2>
+                  <p>Since a young age, I've been an extremely creatively driven person. 
+                    Whether it's music, drawing, photography, or anything I could get my hands on. 
+                    I eventually studied Computer and Information Sciences at Monash University with a major in Mobile Systems. 
+                    Although it's an interesting field, I cannot give up my desires to create art. 
+                    I created a YouTube channel in 2021 where I made comedy content and honed a lot of my editing skills. 
+                    I used those skills to make videos for international and local clients. 
+                    I am now on the lookout for amazing projects such as music videos, film projects, or social media.</p>
+                  <h3 class=" mt-5">Services</h3>
+                  
+                  <div class="d-block d-md-flex mt-5">
+                    <div class="mr-md-auto mr-2">
+                      <ul class="ul-check list-unstyled primary">
+                        <li>Short Documentaries</li>
+                        <li>YouTube Videos</li>
+                        <li>Short Form Content</li>
+                      </ul>
                     </div>
-            </div>
-            <div class="col-lg-6 ">
-                <img src="images/skateboard-2.jpg" width="100%">
-            </div>
-        </div>
-    </div>
-
-    <div class="container-fluid" style="padding: 1.5em; ">
-        <div class="row align-items-center">
-            <h1>Resume</h1>
-        </div>
-        <div class="row align-items-center">
-           
-            <div class="col-lg-4">
-               
-            <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <h2>
-                        Hi, I'm Carman
-                    </h2>
-                </div>
-                <div class="col-lg-6">
-                    <h2>
-                        Education
-                    </h2>
-                </div>
-            </div>
-                    <p class="lead" style="text-align: justify; color: #333;">Since a young age, I've been an extremely creatively driven person.
-                        Whether it's music, drawing, photography, or anything I could get my hands on. I eventually 
-                        studied Computer and Information Sciences at Monash University with a major in Mobile Systems. 
-                        Although it's an interesting field, I cannot give up my desires to create art. I created a YouTube channel 
-                        in 2021 where I made comedy content and honed a lot of my editing skills. I used those skills to make videos 
-                        for international and local clients. I am now on the lookout for amazing projects such as music videos, film projects, 
-                        or social media. 
-                    </p>
-                    <strong><h5><a href="https://youtu.be/chYBMOiJus4">Watch Video Introduction</a></h5></strong>
-                    <div style="padding-top: 1.5em; padding-bottom: 1.5em">
-                        <a href="/contact.html" class="primary-btn-index">Hire Me!</a>
+                    <div class="mr-md-auto">
+                      <ul class="ul-check list-unstyled primary">
+                        <li>Project Organisation & Selects</li>
+                        <li>Assembly Cuts</li>
+                        <li>Professional Reels & Video CVs</li>
+                      </ul>
                     </div>
+
+                  </div>
+                </div>
+              </div>
             </div>
+          </div>
+        </section>
+
+
+        <!--FORM-
+        <section class="site-section" id="section-contact">
+          <div class="container">
+            <div class="row justify-content-center">
+              <div class="col-md-8">
+                <h2 class=" mb-5 heading">Contact</h2>
+
+                <form action="#">
+
+
+
+                  <div class="row form-group">
+                    <div class="col-md-6 mb-3 mb-md-0">
+                      <label class="" for="fname">First Name</label>
+                      <input type="text" id="fname" class="form-control">
+                    </div>
+                    <div class="col-md-6">
+                      <label class="" for="lname">Last Name</label>
+                      <input type="text" id="lname" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="email">Email</label> 
+                      <input type="email" id="email" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+
+                    <div class="col-md-12">
+                      <label class="" for="subject">Subject</label> 
+                      <input type="subject" id="subject" class="form-control">
+                    </div>
+                  </div>
+
+                  <div class="row form-group mb-5">
+                    <div class="col-md-12">
+                      <label class="" for="message">Message</label> 
+                      <textarea name="message" id="message" cols="30" rows="7" class="form-control"></textarea>
+                    </div>
+                  </div>
+
+                  <div class="row form-group">
+                    <div class="col-md-12">
+                      <input type="submit" value="Send Message" class="btn btn-primary btn-md">
+                    </div>
+                  </div>
+
+
+                </form>
+              </div>
+            </div>
+          </div>
+        </section>
+      -->
+        
+        <div class="row justify-content-center">
+          <div class="col-md-12 text-center py-5">
+            <p>Copyright Rêver &copy;2024
+            </p>
+            <p>carmanillustrations@gmail.com
+            </p>
+          </div>
         </div>
-    </div>
-   <!-- Footer -->
-   <div class="footer" id="footer">
-    <div class="container">
-        <div class="row">
-            <div class="col-md-4">
-                <div class="footer-col last">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled li-space-lg p-small">
-                        <li class="media">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <div class="media-body">Cape Town, South Africa</div>
-                        </li>
-                        <li class="media">
-                            <i class="fas fa-envelope"></i>
-                            <div class="media-body"><a class="white" href="mailto:carmanillustrations@gmail.com">carmanillustrations@gmail.com</a></div>
-                        </li>
-                    </ul>
-                </div> 
-            </div> <!-- end of col -->
-        </div> <!-- end of row -->
-    </div> <!-- end of container -->
-</div> <!-- end of footer -->  
-<!-- end of footer -->
+      </div>
+    </main>
 
+  </div> <!-- .site-wrap -->
 
- <!-- Copyright -->
- <div class="copyright">
-     <div class="container">
-         <div class="row">
-             <div class="col-lg-12">
-                 <p class="p-small">Copyright © 2024</p>
-             </div> <!-- end of col -->
-         </div> <!-- enf of row -->
-     </div> <!-- end of container -->
- </div> <!-- end of copyright --> 
- <!-- end of copyright -->
-    
-    	
-    <!-- Scripts -->
-    <script src="js/jquery.min.js"></script> <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/popper.min.js"></script> <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/bootstrap.min.js"></script> <!-- Bootstrap framework -->
-    <script src="js/jquery.easing.min.js"></script> <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/swiper.min.js"></script> <!-- Swiper for image and text sliders -->
-    <script src="js/jquery.magnific-popup.js"></script> <!-- Magnific Popup for lightboxes -->
-    <script src="js/validator.min.js"></script> <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/scripts.js"></script> <!-- Custom scripts -->
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery-migrate-3.0.1.min.js"></script>
+  <script src="js/jquery.easing.1.3.js"></script>
+  <script src="js/jquery-ui.js"></script>
+  <script src="js/popper.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script src="js/owl.carousel.min.js"></script>
+  <script src="js/jquery.stellar.min.js"></script>
+  <script src="js/jquery.countdown.min.js"></script>
+  <script src="js/jquery.magnific-popup.min.js"></script>
+  <script src="js/aos.js"></script>
+  <script src="js/lozad.min.js"></script>
+  
 
-     <!-- Js Plugins -->
-     <script src="js/jquery-3.3.1.min.js"></script>
-     <script src="js/bootstrap.min.js"></script>
-     <script src="js/jquery.magnific-popup.min.js"></script>
-     <script src="js/mixitup.min.js"></script>
-     <script src="js/masonry.pkgd.min.js"></script>
-     <script src="js/jquery.slicknav.js"></script>
-     <script src="js/owl.carousel.min.js"></script>
-     <script src="js/main.js"></script>
-     
-</body>
+  <script src="js/jquery.fancybox.min.js"></script>
+
+  <script src="js/main.js"></script>
+
+  
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  </body>
 </html>

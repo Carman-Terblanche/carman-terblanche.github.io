@@ -1,585 +1,1068 @@
-<!-- /*
-* Template Name: Snap
-* Template Author: Untree.co
-* Tempalte URI: https://untree.co/
-* License: https://creativecommons.org/licenses/by/3.0/
-*/ -->
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="author" content="Untree.co">
-  <link rel="shortcut icon" href="favicon.png">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Rêver | Cinematic Videography & Editing</title>
+    <meta
+      name="description"
+      content="Professional videography and video editing services by Carman Terblanche"
+    />
 
-  <meta name="description" content="" />
-  <meta name="keywords" content="" />
-  
+    <!-- Preload critical assets -->
+    <link
+      rel="preload"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+      as="style"
+    />
+    <link rel="preload" href="css/style.css" as="style" />
 
-  <link href="https://fonts.googleapis.com/css?family=Inter:300,400,500,600, 700,900|Oswald:400,700" rel="stylesheet">
+    <!-- Fonts -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&family=Playfair+Display:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
+    <!-- Favicon -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+    <link rel="manifest" href="/site.webmanifest" />
 
-  <link rel="stylesheet" href="fonts/icomoon/style.css">
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
 
-  <link rel="stylesheet" href="css/bootstrap.min.css">
-  <link rel="stylesheet" href="css/magnific-popup.css">
-  <link rel="stylesheet" href="css/jquery-ui.css">
-  <link rel="stylesheet" href="css/owl.carousel.min.css">
-  <link rel="stylesheet" href="css/owl.theme.default.min.css">
-  <link rel="stylesheet" href="fonts/flaticon/font/flaticon.css">
-
-  <link rel="stylesheet" href="css/aos.css">
-  <link rel="stylesheet" href="css/fancybox.min.css">
-
-  <link rel="stylesheet" href="css/style.css">
-  <title>Rêver</title>
-
-
-</head>
-<body data-spy="scroll" data-target=".site-navbar-target" data-offset="200">
-
-
-  <div class="site-wrap">
-
-    <div class="site-mobile-menu site-navbar-target">
-      <div class="site-mobile-menu-header">
-        <div class="site-mobile-menu-close mt-3">
-          <span class="icon-close2 js-menu-toggle"></span>
-        </div>
+    <!-- Open Graph / Social Media Meta -->
+    <meta
+      property="og:title"
+      content="Rêver | Cinematic Videography & Editing"
+    />
+    <meta
+      property="og:description"
+      content="Professional videography and video editing services by Carman Terblanche"
+    />
+    <meta
+      property="og:image"
+      content="https://yourdomain.com/images/social-share.jpg"
+    />
+    <meta property="og:url" content="https://yourdomain.com" />
+    <meta name="twitter:card" content="summary_large_image" />
+  </head>
+  <body>
+    <!-- Loading Animation -->
+    <div class="loader">
+      <div class="loader-logo">
+        <span>Rêver</span>
       </div>
-      <div class="site-mobile-menu-body"></div>
     </div>
 
-    <header class="header-bar d-flex d-lg-block align-items-center site-navbar-target" data-aos="fade-right">
-        <a href="index.html"><img src="/images/logo.webp" width="50%"/></a>
-
-
-      <div class="d-inline-block d-lg-none ml-md-0 ml-auto py-3" style="position: relative; top: 3px;"><a href="#" class="site-menu-toggle js-menu-toggle "><span class="icon-menu h3"></span></a></div>
-
-      <div class="main-menu">
-        <ul class="js-clone-nav">
-          <li><a href="#section-home" class="nav-link">Home</a></li>
-          <li><a href="#section-photos" class="nav-link">Work</a></li>
-          <li><a href="#section-about" class="nav-link">About</a></li>
-          <li><a href="#section-prices" class="nav-link">Prices</a></li>
-          <li><a href="/docs/resume.pdf" class="nav-link">Resume</a></li>
-          <li><a href="music.html" class="nav-link">Music</a></li>
-        </ul>
-        <ul class="social js-clone-nav">
-          <li><a href="https://www.instagram.com/carman_terblanche?igsh=bW5pNG54cmc3ZWYx&utm_source=qr"><span class="icon-instagram"></span></a></li>
-          <li><a href="https://www.linkedin.com/in/carman-terblanche/"><span class="icon-linkedin"></span></a></li>
-        </ul>
-       
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="#home">Rêver</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="#work">Work</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#about">About</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#services">Services</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#contact">Contact</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="music.html">Music</a>
+            </li>
+          </ul>
+          <div class="social-links ms-lg-4">
+            <a
+              href="https://www.instagram.com/carman_terblanche"
+              target="_blank"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/in/carman-terblanche/"
+              target="_blank"
+              ><i class="fab fa-linkedin-in"></i
+            ></a>
+          </div>
+        </div>
       </div>
-    </header> 
-    <main class="main-content">
+    </nav>
 
-      <section class="site-section-hero bg-image mb-5" style="background-image: url('images/index-carman.jpg');"  data-stellar-background-ratio="0.5" id="section-home">
-        <div class="row justify-content-center align-items-center">
-          <div class="col-md-7 text-center">
-            <h1 class=" heading text-white" data-aos="fade-up">rêver</h1>
-            <p class="lead text-white mb-4" data-aos="fade-up" data-aos-delay="100">Videography | Video Editing</a></p>
-            <p data-aos="fade-up" data-aos-delay="100"><a href="#footer" class="btn btn-primary btn-md smoothscroll">Hire Me!</a></p>
-          </div>
-        </div>
-      </section>
-
-      <!--WORK-->
-      <div class="container-fluid site-section">
-
-
-        <div class="row mb-3">
-          <div class="col-12 text-center">
-            <h2 class="heading">Narrative Edits</h2>
-          </div>
-        </div>
-
-        <!-- VIDEO PREVIEW -->
-        <header id="header" class="header">
-          <img src="videos/narrative/preview_video.mp4" class="img-fluid" height="20%" alt="...">
-        </header> 
-        <!-- END OF VIDEO PREVIEW -->
-
-        <section class="row align-items-stretch photos" id="section-photos">
-          <div class="col-12">
-            <div class="row align-items-stretch">
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://youtu.be/KF_Uim7VB-g" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/toco.png" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="https://youtu.be/dKohMhhg-LE" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/euphoria-1.png" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="https://youtu.be/Bw2Bi8ND8mg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/joker.png" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://youtu.be/JTfagcXP7LA" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/sinking.jpg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="https://youtu.be/_LOOVjVmLgA" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/sb.png" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="https://youtu.be/waMugKsLG0Q" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/ctzipline.png" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section> <!-- #section-Work -->
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+      <div class="hero-video">
+        <video autoplay muted loop playsinline poster="images/hero-poster.jpg">
+          <source src="videos/narrative/preview_video.mp4" type="video/mp4" />
+        </video>
+        <div class="overlay"></div>
       </div>
-
-      <!--REAL ESTATE-->
-      <div class="container-fluid site-section">
-
-
-        <div class="row mb-3">
-          <div class="col-12 text-center">
-            <h2 class="heading">Real Estate Videos</h2>
+      <div class="hero-content">
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-8">
+              <h1 class="display-1">Cinematic <span>Storytelling</span></h1>
+              <p class="lead">
+                Elevating brands and properties through compelling visual
+                narratives
+              </p>
+              <div class="cta-buttons">
+                <a href="#work" class="btn btn-primary">View Work</a>
+                <a href="#contact" class="btn btn-outline">Get in Touch</a>
+              </div>
+            </div>
           </div>
         </div>
-
-        <section class="row align-items-stretch photos" id="section-photos">
-          <div class="col-12">
-
-            <!-- VIDEO PREVIEW -->
-            <header id="header" class="header">
-              <img src="videos/real estate/Arcadia Penthouse.mp4" class="img-fluid" height="20%" alt="...">
-            </header> 
-            <!-- END OF VIDEO PREVIEW -->
-
-            <!--ROW 1-->
-            <div class="row align-items-stretch">
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://youtu.be/XkzvOnJlEhE" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/Arcadia Penthouse.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="https://youtu.be/GIza1FoLbss" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/126 Woodhill.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="https://youtu.be/kB3mtK2iKIs" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/manhattan.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!--ROW 2-->
-            <div class="row align-items-stretch">
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://youtu.be/jARBSzu52ss" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/75 FountainLombardy.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="https://youtu.be/WeVuPMOVAes" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/touraco.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="https://youtu.be/XBbMg-gLqAA" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/walter.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-            <!--ROW 3-->
-            <div class="row align-items-stretch">
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://youtu.be/Hun5EnM3MlQ" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/15 Observatory Woodhill.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-
-
-            
-          </div>
-        </section> <!-- #section-REAL ESTATE -->
       </div>
+      <div class="scroll-down">
+        <span>Scroll</span>
+        <div class="line"></div>
+      </div>
+    </section>
 
-      <!--REAL ESTATE PHOTOS-->
-
-      <div class="container-fluid site-section">
-
-        <div class="row mb-3">
-          <div class="col-12 text-center">
-            <h2 class="heading">Real Estate Photos</h2>
-          </div>
+    <!-- Work Section -->
+    <section id="work" class="work-section">
+      <div class="container-fluid px-0">
+        <div class="section-header">
+          <h2 class="section-title">Selected Work</h2>
+          <p class="section-subtitle">A showcase of my latest projects</p>
         </div>
 
-        <section class="row align-items-stretch photos" id="section-photos">
-          <div class="col-12">
-            <div class="row align-items-stretch">
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="images/real estate/re1.webp" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/re1.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/real estate/re2.webp" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/re2.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/real estate/re3.webp" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/re3.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="images/real estate/re4.webp" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/re4.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/real estate/re5.webp" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/real estate/re5.webp" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
+        <!-- Narrative Edits -->
+        <div class="work-category">
+          <div class="category-header">
+            <h3>Narrative Edits</h3>
           </div>
-        </section> <!-- #section-real estate photos -->
-
-      <!--PHOTOS--
-
-      <div class="container-fluid site-section">
-
-        <div class="row mb-3">
-          <div class="col-12 text-center">
-            <h2 class="heading">Photos</h2>
-          </div>
-        </div>
-
-        <section class="row align-items-stretch photos" id="section-photos">
-          <div class="col-12">
-            <div class="row align-items-stretch">
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="images/photo_14.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_14.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/photo_16.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_16.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/photo_4.JPG" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/Photo_4.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="images/photo_7.JPG" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_7.JPG" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/photo_13.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_13.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/photo_15.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_15.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up">
-                <a href="images/photo_11.JPG" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_11.JPG" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                <a href="images/photo_18.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_18.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-              <div class="col-6 col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="images/photo_17.jpeg" class="d-block photo-item" data-fancybox="gallery">
-                  <img src="images/photo_17.jpeg" alt="Image" class="img-fluid mb-0">
-                  <div class="photo-text-more">
-                    <span class="icon icon-eye"></span>
-                  </div>
-                </a>
-              </div>
-            </div>
-          </div>
-        </section>  #section-photos -->
-
-        <section class="site-section" id="section-about">
-          <div class="container">
-            <div class="row justify-content-center">
-
-              <div class="col-md-8">
-
-                <!-- <h2 class="heading">About</h2> -->
-
-                <img src="images/skateboard-2.jpg" alt="Image" class="img-fluid mb-4 w-50 rounded-circle">
-
-                <div data-aos="fade-up"  data-aos-delay="100">
-                  <h2 class="">Hi I'm Carman</h2>
-                  <p>Since a young age, I've been an extremely creatively driven person. 
-                    Whether it's music, drawing, photography, or anything I could get my hands on. 
-                    I eventually studied Computer and Information Sciences at Monash University with a major in Mobile Systems. 
-                    Although it's an interesting field, I cannot give up my desires to create art. 
-                    I created a YouTube channel in 2021 where I made comedy content and honed a lot of my editing skills. 
-                    I used those skills to make videos for international and local clients. 
-                    I am now on the lookout for amazing projects such as music videos, film projects, or social media.</p>
-                  <h3 class=" mt-5">Services</h3>
-                  
-                  <div class="d-block d-md-flex mt-5">
-                    <div class="mr-md-auto mr-2">
-                      <ul class="ul-check list-unstyled primary">
-                      <!--- <li>Short Documentaries</li>
-                        <li>YouTube Videos</li>
-                        <li>Short Form Content</li> -->
-                        <li>Real Estate Photos & Video</li>
-                      </ul>
+          <div class="row g-0">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/KF_Uim7VB-g"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/toco.png"
+                    alt="Toco Project"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Toco</h4>
+                      <p>Narrative Edit</p>
                     </div>
-                    <div class="mr-md-auto">
-                      <ul class="ul-check list-unstyled primary">
-                      <!---  <li>Project Organisation & Selects</li>
-                        <li>Assembly Cuts</li>
-                        <li>Professional Reels & Video CVs</li> -->
-                      </ul>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
 
-                  <div data-aos="fade-up"  data-aos-delay="100">
-                    <h2 class="" id="section-prices">Prices</h2>
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/dKohMhhg-LE"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/euphoria-1.png"
+                    alt="Euphoria Project"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Euphoria</h4>
+                      <p>Narrative Edit</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                    
-                       <!--BASIC PACKAGES-->
-                       <h3>Basic Packages</h3>
-                        <p>All Basic Packages include a basic walkthrough video.</p>
-                         
-                        <section class="row align-items-stretch photos" id="section-photos">
-                          <div class="col-12">
-                            <div class="row align-items-stretch">
-                              <div class="col-md-12" data-aos="fade-up" data-aos-delay="200">
-                                <a href="https://youtu.be/1lnXHPh3qgc" class="d-block photo-item" data-fancybox="gallery">
-                                  <img src="images/real estate/1173 Woodhill.webp" alt="Image" class="img-fluid mb-0">
-                                  <div class="photo-text-more">
-                                    <span class="icon icon-eye"></span>
-                                  </div>
-                                </a>
-                              </div>
-                          </div>
-                        </section>
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/Bw2Bi8ND8mg"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/joker.png"
+                    alt="Joker Project"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Joker</h4>
+                      <p>Narrative Edit</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        <h4>R650</h4>
-                            <ul class="ul-check list-unstyled primary">
-                              <li>Edited Photos</li>
-                              <li>Basic Video Walkthrough</li>
-                            </ul>
+            <!-- Project 4 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/JTfagcXP7LA"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/sinking.jpg"
+                    alt="Sinking Project"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Sinking</h4>
+                      <p>Narrative Edit</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        <h4>R500</h4>
-                        <ul class="ul-check list-unstyled primary">
-                          <li>Basic Video Walkthrough</li>
-                        </ul>
+            <!-- Project 5 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/_LOOVjVmLgA"
+              >
+                <div class="project-image">
+                  <img src="images/sb.png" alt="SB Project" loading="lazy" />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>SB</h4>
+                      <p>Narrative Edit</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-                        <!--PREMIUM PACKAGES-->
-                    <h3>Premium Packages</h3>
-
-                        
-                    <p>All Premium Packages include 1 edited video of the property without specified length and photos of every room with exteriors. 
-                     All stand-alone properties include drone footage. <strong>If the property does not allow drone footage, you get a discount of R300.</strong> </p>
-
-                     <section class="row align-items-stretch photos" id="section-photos">
-                      <div class="col-12">
-                        <div class="row align-items-stretch">
-                          <div class="col-md-12" data-aos="fade-up" data-aos-delay="200">
-                            <a href="https://youtu.be/XkzvOnJlEhE" class="d-block photo-item" data-fancybox="gallery">
-                              <img src="images/real estate/Arcadia Penthouse.webp" alt="Image" class="img-fluid mb-0">
-                              <div class="photo-text-more">
-                                <span class="icon icon-eye"></span>
-                              </div>
-                            </a>
-                          </div>
-                      </div>
-                    </section>
-
-
-                      <div class="d-block d-md-flex mt-5">
-                        <div class="mr-md-auto mr-2">
-
-                          <h4>R5000</h4>
-                            <ul class="ul-check list-unstyled primary">
-                              <li>Edited Photos</li>
-                              <li>Video Post-Production</li>
-                              <li>Colour Correction and Grading</li>
-                              <li>Video Stabalisation</li>
-                              <li>Curated Music</li>
-                              <li>Thought-out edits to showcase the flow of the property</li>
-                              <li>Drone Footage</li>
-                              <li>Noise Reduction</li>
-                              <li>Social Media Portrait Property Walkthrough</li>
-                            </ul>
-                         </div> 
-                       </div>  
-
-                          <h4>R2500</h4>
-                          <ul class="ul-check list-unstyled primary">
-                           <li>Edited Photos</li>
-                           <li>Video Post-Production</li>
-                           <li>Colour Correction and Grading</li>
-                           <li>Video Stabalisation</li>
-                           <li>Curated Music</li>
-                           <li>Thought-out edits to showcase the flow of the property</li>
-                           <li>Drone Footage</li>
-                           </ul>
-
-
-                         <!--CONVENIENCE PACKAGES-->
-                       <h3>Purchase My Listings</h3>
-                       <p>If you want to list a property but don't want the hassle of arranging another shoot, feel free to Purchase
-                         my listings outright.
-                       </p>
-                        
-                       <h4>R1000</h4>
-                           <ul class="ul-check list-unstyled primary">
-                             <li>Any listing with any package (Premium or Basic)</li>
-                           </ul>
-                 </div>
-                 
+            <!-- Project 6 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-narrative"
+                data-src="https://youtu.be/waMugKsLG0Q"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/ctzipline.png"
+                    alt="Zipline Project"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Zipline</h4>
+                      <p>Narrative Edit</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
-        </section>
+        </div>
 
+        <!-- Real Estate Videos -->
+        <div class="work-category">
+          <div class="category-header">
+            <h3>Real Estate Videos</h3>
+          </div>
+          <div class="row g-0">
+            <!-- Project 1 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/XkzvOnJlEhE"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/Arcadia Penthouse.webp"
+                    alt="Arcadia Penthouse"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Arcadia Penthouse</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
 
-        <div class="row justify-content-center" id="footer">
-          <div class="col-md-12 text-center py-5">
-            <p>Copyright Rêver &copy;2025
-            </p>
-            <p>carmanillustrations@gmail.com
-            </p>
-            <p>Whatsapp: +27 727 072 657
-            </p>
+            <!-- Project 2 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/GIza1FoLbss"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/126 Woodhill.webp"
+                    alt="126 Woodhill"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>126 Woodhill</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/kB3mtK2iKIs"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/manhattan.webp"
+                    alt="Manhattan"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Manhattan</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 4 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/jARBSzu52ss"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/75 FountainLombardy.webp"
+                    alt="75 Fountain"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>75 Fountain</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 5 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/WeVuPMOVAes"
+              >
+                <div class="project-image">
+                  <img src="images/touraco.webp" alt="Touraco" loading="lazy" />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Touraco</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Project 6 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-realestate"
+                data-src="https://youtu.be/XBbMg-gLqAA"
+              >
+                <div class="project-image">
+                  <img src="images/walter.webp" alt="Walter" loading="lazy" />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Walter</h4>
+                      <p>Real Estate Video</p>
+                    </div>
+                    <div class="play-button">
+                      <i class="fas fa-play"></i>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Real Estate Photos -->
+        <div class="work-category">
+          <div class="category-header">
+            <h3>Real Estate Photography</h3>
+          </div>
+          <div class="row g-0">
+            <!-- Photo 1 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-photos"
+                data-src="images/real estate/re1.webp"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/re1.webp"
+                    alt="Real Estate Photo 1"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Luxury Interior</h4>
+                      <p>Photography</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 2 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-photos"
+                data-src="images/real estate/re2.webp"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/re2.webp"
+                    alt="Real Estate Photo 2"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Exteriors</h4>
+                      <p>Photography</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 3 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-photos"
+                data-src="images/real estate/re3.webp"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/re3.webp"
+                    alt="Real Estate Photo 3"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Scenic View</h4>
+                      <p>Photography</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 4 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-photos"
+                data-src="images/real estate/re4.webp"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/re4.webp"
+                    alt="Real Estate Photo 4"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Elegant Bedroom</h4>
+                      <p>Photography</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Photo 5 -->
+            <div class="col-md-6 col-lg-4 project-card">
+              <div
+                class="project-link"
+                data-fancybox="gallery-photos"
+                data-src="images/real estate/re5.webp"
+              >
+                <div class="project-image">
+                  <img
+                    src="images/real estate/re5.webp"
+                    alt="Real Estate Photo 5"
+                    loading="lazy"
+                  />
+                  <div class="project-overlay">
+                    <div class="project-info">
+                      <h4>Architectural Detail</h4>
+                      <p>Photography</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
-    </main>
+    </section>
 
-  </div> <!-- .site-wrap -->
+    <!-- About Section -->
+    <section id="about" class="about-section">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-6">
+            <div class="about-image">
+              <img
+                src="images/skateboard-2.jpg"
+                alt="Carman Terblanche"
+                class="img-fluid"
+                loading="lazy"
+              />
+              <div class="decorative-element"></div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="about-content">
+              <div class="section-header">
+                <h2 class="section-title">About Me</h2>
+                <p class="section-subtitle">Creative Visionary</p>
+              </div>
+              <p>
+                Since a young age, I've been an extremely creatively driven
+                person. Whether it's music, drawing, photography, or anything I
+                could get my hands on.
+              </p>
+              <p>
+                I eventually studied Computer and Information Sciences at Monash
+                University with a major in Mobile Systems. Although it's an
+                interesting field, I cannot give up my desires to create art.
+              </p>
+              <p>
+                I created a YouTube channel in 2021 where I made comedy content
+                and honed a lot of my editing skills. I used those skills to
+                make videos for international and local clients.
+              </p>
+              <p>
+                I am now on the lookout for amazing projects such as music
+                videos, film projects, or social media.
+              </p>
+              <div class="signature">
+                <img
+                  src="images/signature.png"
+                  alt="Signature"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
-  <script src="js/jquery-3.3.1.min.js"></script>
-  <script src="js/jquery-migrate-3.0.1.min.js"></script>
-  <script src="js/jquery.easing.1.3.js"></script>
-  <script src="js/jquery-ui.js"></script>
-  <script src="js/popper.min.js"></script>
-  <script src="js/bootstrap.min.js"></script>
-  <script src="js/owl.carousel.min.js"></script>
-  <script src="js/jquery.stellar.min.js"></script>
-  <script src="js/jquery.countdown.min.js"></script>
-  <script src="js/jquery.magnific-popup.min.js"></script>
-  <script src="js/aos.js"></script>
-  <script src="js/lozad.min.js"></script>
-  
+    <!-- Services Section -->
+    <section id="services" class="services-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">Services</h2>
+          <p class="section-subtitle">What I can do for you</p>
+        </div>
 
-  <script src="js/jquery.fancybox.min.js"></script>
+        <div class="row">
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-video"></i>
+              </div>
+              <h3>Videography</h3>
+              <p>
+                Professional video production for real estate, events, and
+                creative projects with cinematic quality.
+              </p>
+            </div>
+          </div>
 
-  <script src="js/main.js"></script>
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-film"></i>
+              </div>
+              <h3>Video Editing</h3>
+              <p>
+                Expert post-production including color grading, sound design,
+                and visual effects to bring your vision to life.
+              </p>
+            </div>
+          </div>
 
-  
+          <div class="col-md-4">
+            <div class="service-card">
+              <div class="service-icon">
+                <i class="fas fa-camera"></i>
+              </div>
+              <h3>Photography</h3>
+              <p>
+                High-quality real estate and architectural photography that
+                showcases properties in their best light.
+              </p>
+            </div>
+          </div>
+        </div>
 
-  <!-- Global site tag (gtag.js) - Google Analytics -->
+        <!-- Pricing Section -->
+        <div class="pricing-section">
+          <div class="section-header">
+            <h2 class="section-title">Pricing</h2>
+            <p class="section-subtitle">Tailored packages for your needs</p>
+          </div>
+
+          <div class="row">
+            <!-- Basic Package -->
+            <div class="col-md-4">
+              <div class="pricing-card">
+                <div class="pricing-header">
+                  <h3>Basic</h3>
+                  <div class="price">R650</div>
+                  <p>Perfect for simple property showcases</p>
+                </div>
+                <ul class="pricing-features">
+                  <li><i class="fas fa-check"></i> Edited Photos</li>
+                  <li><i class="fas fa-check"></i> Basic Video Walkthrough</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Get Started</a>
+              </div>
+            </div>
+
+            <!-- Standard Package -->
+            <div class="col-md-4">
+              <div class="pricing-card featured">
+                <div class="pricing-header">
+                  <h3>Standard</h3>
+                  <div class="price">R1000</div>
+                  <p>Comprehensive property presentation</p>
+                </div>
+                <ul class="pricing-features">
+                  <li><i class="fas fa-check"></i> Edited Photos</li>
+                  <li><i class="fas fa-check"></i> Video Post-Production</li>
+                  <li>
+                    <i class="fas fa-check"></i> Color Correction & Grading
+                  </li>
+                  <li><i class="fas fa-check"></i> Video Stabilization</li>
+                  <li><i class="fas fa-check"></i> Curated Music</li>
+                  <li><i class="fas fa-check"></i> Thought-out edits</li>
+                  <li><i class="fas fa-check"></i> Drone Footage</li>
+                </ul>
+                <a href="#contact" class="btn btn-primary">Get Started</a>
+              </div>
+            </div>
+
+            <!-- Premium Package -->
+            <div class="col-md-4">
+              <div class="pricing-card">
+                <div class="pricing-header">
+                  <h3>Premium</h3>
+                  <div class="price">R1500</div>
+                  <p>Ultimate property marketing solution</p>
+                </div>
+                <ul class="pricing-features">
+                  <li><i class="fas fa-check"></i> Everything in Standard</li>
+                  <li><i class="fas fa-check"></i> Noise Reduction</li>
+                  <li>
+                    <i class="fas fa-check"></i> Social Media Portrait
+                    Walkthrough
+                  </li>
+                  <li><i class="fas fa-check"></i> Priority Scheduling</li>
+                  <li><i class="fas fa-check"></i> 2 Revision Rounds</li>
+                </ul>
+                <a href="#contact" class="btn btn-outline">Get Started</a>
+              </div>
+            </div>
+          </div>
+
+          <div class="pricing-note">
+            <p>
+              <strong>Note:</strong> All stand-alone properties include drone
+              footage in the Standard Package or higher. If the property does
+              not allow drone footage, you get a discount of R300.
+            </p>
+          </div>
+        </div>
+
+        <!-- Convenience Option -->
+        <div class="convenience-option">
+          <h3>Purchase My Listings</h3>
+          <p>
+            If you want to list a property but don't want the hassle of
+            arranging another shoot, feel free to purchase my listings outright.
+          </p>
+          <div class="convenience-card">
+            <div class="price">R500</div>
+            <p>Any listing with any package</p>
+            <a href="#contact" class="btn btn-outline">Inquire Now</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact-section">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-6">
+            <div class="contact-info">
+              <div class="section-header">
+                <h2 class="section-title">Get In Touch</h2>
+                <p class="section-subtitle">
+                  Let's create something amazing together
+                </p>
+              </div>
+
+              <div class="contact-details">
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-envelope"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Email</h4>
+                    <a href="mailto:carmanillustrations@gmail.com"
+                      >carmanillustrations@gmail.com</a
+                    >
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-phone-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Phone</h4>
+                    <a href="tel:+27727072657">+27 72 707 2657</a>
+                  </div>
+                </div>
+
+                <div class="contact-item">
+                  <div class="contact-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                  </div>
+                  <div class="contact-text">
+                    <h4>Location</h4>
+                    <p>Based in South Africa</p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="social-links">
+                <a
+                  href="https://www.instagram.com/carman_terblanche"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/carman-terblanche/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+          
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="contact-form">
+              <form id="contactForm" action="https://formspree.io/f/mzzevlnp" method="POST">
+                  <div class="form-group">
+                      <input
+                          type="text"
+                          class="form-control"
+                          id="name"
+                          name="name"
+                          placeholder="Your Name"
+                          required
+                      />
+                  </div>
+                  <div class="form-group">
+                      <input
+                          type="email"
+                          class="form-control"
+                          id="email"
+                          name="email"
+                          placeholder="Your Email"
+                          required
+                      />
+                  </div>
+                  <div class="form-group">
+                      <input
+                          type="text"
+                          class="form-control"
+                          id="subject"
+                          name="subject"
+                          placeholder="Subject"
+                      />
+                  </div>
+                  <div class="form-group">
+                      <textarea
+                          class="form-control"
+                          id="message"
+                          name="message"
+                          rows="5"
+                          placeholder="Your Message"
+                          required
+                      ></textarea>
+                  </div>
+                  <button type="submit" class="btn btn-primary">
+                      Send Message
+                  </button>
+              </form>
+          </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-md-6">
+            <div class="footer-logo">
+              <a href="index.html">Rêver</a>
+            </div>
+            <p class="footer-text">
+              Videography and editing services that elevate your
+              visual storytelling.
+            </p>
+          </div>
+
+          <div class="col-md-3">
+            <h4 class="footer-title">Quick Links</h4>
+            <ul class="footer-links">
+              <li><a href="#home">Home</a></li>
+              <li><a href="#work">Work</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#services">Services</a></li>
+              <li><a href="#contact">Contact</a></li>
+            </ul>
+          </div>
+
+        <div class="footer-bottom">
+          <div class="row">
+            <div class="col-md-6">
+              <p class="copyright">&copy; 2025 Rêver. All rights reserved.</p>
+            </div>
+            <div class="col-md-6">
+              <div class="footer-social">
+                <a
+                  href="https://www.instagram.com/carman_terblanche"
+                  target="_blank"
+                  ><i class="fab fa-instagram"></i
+                ></a>
+                <a
+                  href="https://www.linkedin.com/in/carman-terblanche/"
+                  target="_blank"
+                  ><i class="fab fa-linkedin-in"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <a href="#" class="back-to-top" id="backToTop">
+      <i class="fas fa-arrow-up"></i>
+    </a>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0/dist/fancybox/fancybox.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+    <script src="js/main.min.js"></script>
+
+    <script>
+      // Loader
+      window.addEventListener("load", function () {
+        document.querySelector(".loader").style.opacity = "0";
+        setTimeout(function () {
+          document.querySelector(".loader").style.display = "none";
+        }, 500);
+      });
+
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+
+          const targetId = this.getAttribute("href");
+          const targetElement = document.querySelector(targetId);
+
+          if (targetElement) {
+            window.scrollTo({
+              top: targetElement.offsetTop - 80,
+              behavior: "smooth",
+            });
+
+            // Close mobile menu if open
+            const navbarCollapse = document.querySelector(".navbar-collapse");
+            if (navbarCollapse.classList.contains("show")) {
+              navbarCollapse.classList.remove("show");
+            }
+          }
+        });
+      });
+
+      // Navbar background change on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        const backToTop = document.getElementById("backToTop");
+
+        if (window.scrollY > 100) {
+          navbar.classList.add("scrolled");
+          backToTop.style.opacity = "1";
+          backToTop.style.visibility = "visible";
+        } else {
+          navbar.classList.remove("scrolled");
+          backToTop.style.opacity = "0";
+          backToTop.style.visibility = "hidden";
+        }
+      });
+
+      // Initialize testimonial slider
+      $(document).ready(function () {
+        $(".testimonials-slider").slick({
+          dots: true,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          adaptiveHeight: true,
+          autoplay: true,
+          autoplaySpeed: 5000,
+          arrows: false,
+        });
+
+        // Initialize Fancybox
+        Fancybox.bind("[data-fancybox]", {
+          // Your custom options
+          Thumbs: false,
+          Toolbar: {
+            display: {
+              left: [],
+              middle: [],
+              right: ["close"],
+            },
+          },
+          Images: {
+            zoom: false,
+          },
+          Video: {
+            autoStart: true,
+          },
+        });
+      });
+
+      // Back to top button
+      document
+        .getElementById("backToTop")
+        .addEventListener("click", function (e) {
+          e.preventDefault();
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+
+    </script>
   </body>
 </html>

@@ -1,253 +1,448 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Google tag (gtag.js) -->
-    <script
-      async
-      src="https://www.googletagmanager.com/gtag/js?id=G-2CJ3CLN6CR"
-    ></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() {
-        dataLayer.push(arguments);
-      }
-      gtag("js", new Date());
-
-      gtag("config", "G-2CJ3CLN6CR");
-    </script>
-
-    <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
-
-    <!-- SEO Meta Tags -->
-    <meta
-      name="description"
-      content="Welcome to my UX/UI Design portfolio! This is my personal website to showcase my work as a UX Designer."
-    />
-    <meta name="author" content="UX Portfolio" />
-
-    <!-- OG Meta Tags to improve the way the post looks when you share the page on LinkedIn, Facebook, Google+ -->
-    <meta property="og:site_name" content="" />
-    <!-- website name -->
-    <meta property="og:site" content="" />
-    <!-- website link -->
-    <meta property="og:title" content="" />
-    <!-- title shown in the actual shared post -->
-    <meta property="og:description" content="" />
-    <!-- description shown in the actual shared post -->
-    <meta property="og:image" content="" />
-    <!-- image link, make sure it's jpg -->
-    <meta property="og:url" content="" />
-    <!-- where do you want your post to link to -->
-    <meta property="og:type" content="article" />
-
-    <!-- Website Title -->
-    <title>Music</title>
-
-    <!-- Styles -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KRMN | Official Site</title>
+    <!-- Bootstrap CSS -->
     <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap&subset=latin-ext"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
       rel="stylesheet"
     />
-    <link href="css/Music/bootstrap.css" rel="stylesheet" />
-    <link href="css/Music/fontawesome-all.css" rel="stylesheet" />
-    <link href="css/Music/swiper.css" rel="stylesheet" />
-    <link href="css/Music/magnific-popup.css" rel="stylesheet" />
-    <link href="css/Music/styles-music.css" rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <style>
+      :root {
+        --black: #000000;
+        --white: #ffffff;
+        --gray-100: #f8f9fa;
+        --gray-200: #e9ecef;
+        --gray-800: #343a40;
+        --gray-900: #212529;
+      }
 
-    <!-- Favicon  -->
+      body {
+        font-family: "Helvetica Neue", Arial, sans-serif;
+        background-color: var(--black);
+        color: var(--white);
+        line-height: 1.6;
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .nav-link {
+        color: var(--white) !important;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin: 0 10px;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--gray-200) !important;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--white);
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-link:hover:after {
+        visibility: visible;
+        width: 100%;
+      }
+
+      .hero-section {
+        height: 80vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("https://via.placeholder.com/1920x1080") no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+        color: var(--white);
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .hero-subtitle {
+        font-size: 1.5rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+      }
+
+      .btn-outline-light {
+        border: 1px solid var(--white);
+        color: var(--white);
+        border-radius: 0;
+        padding: 10px 30px;
+        letter-spacing: 1px;
+        transition: all 0.3s;
+      }
+
+      .btn-outline-light:hover {
+        background-color: var(--white);
+        color: var(--black);
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        bottom: -10px;
+        left: 0;
+        background-color: var(--white);
+      }
+
+      .latest-release {
+        background-color: var(--gray-900);
+        padding: 80px 0;
+      }
+
+      .release-card {
+        background-color: var(--black);
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        transition: transform 0.3s;
+        height: 100%;
+      }
+
+      .release-card:hover {
+        transform: translateY(-10px);
+      }
+
+      .release-img {
+        width: 100%;
+        height: 300px;
+        object-fit: cover;
+      }
+
+      .release-title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin: 20px 0 10px;
+      }
+
+      .release-date {
+        color: var(--gray-200);
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+      }
+
+      .platform-btn {
+        display: inline-block;
+        width: 40px;
+        height: 40px;
+        background-color: var(--white);
+        color: var(--black);
+        border-radius: 50%;
+        text-align: center;
+        line-height: 40px;
+        margin: 0 5px;
+        transition: all 0.3s;
+      }
+
+      .platform-btn:hover {
+        transform: scale(1.1);
+        color: var(--black);
+      }
+
+      .video-section {
+        padding: 80px 0;
+        background-color: var(--black);
+      }
+
+      .video-container {
+        position: relative;
+        padding-bottom: 56.25%; /* 16:9 */
+        height: 0;
+        overflow: hidden;
+      }
+
+      .video-container iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border: none;
+      }
+
+      .spotify-section {
+        padding: 80px 0;
+        background-color: var(--gray-900);
+      }
+
+      .spotify-embed {
+        border-radius: 12px;
+        overflow: hidden;
+      }
+
+      .footer {
+        background-color: var(--black);
+        padding: 30px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .social-icon {
+        color: var(--white);
+        font-size: 1.5rem;
+        margin: 0 15px;
+        transition: all 0.3s;
+      }
+
+      .social-icon:hover {
+        color: var(--gray-200);
+        transform: translateY(-3px);
+      }
+
+      .copyright {
+        color: var(--gray-200);
+        font-size: 0.9rem;
+        letter-spacing: 1px;
+      }
+
+      @media (max-width: 768px) {
+        .hero-title {
+          font-size: 2.5rem;
+        }
+
+        .hero-subtitle {
+          font-size: 1.2rem;
+        }
+
+        .section-title {
+          font-size: 2rem;
+        }
+      }
+    </style>
   </head>
-  <body data-spy="scroll" data-target=".fixed-top">
-    <!-- Page Preloder -->
-    <div id="preloder">
-      <div class="loader"></div>
-    </div>
-    <!-- end of preloader -->
-
+  <body>
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark navbar-custom fixed-top">
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
       <div class="container">
-        <!-- Text Logo - Use this if you don't have a graphic logo -->
-        <!-- <a class="navbar-brand logo-text page-scroll" href="index.html">Tivo</a> -->
-
-        <!-- Image Logo -->
-        <a class="navbar-brand logo-image" href="#"><h1 id="title">KRMN</h1></a>
-
-        <!-- Mobile Menu Toggle Button -->
+        <a class="navbar-brand" href="music.html">KRMN</a>
         <button
           class="navbar-toggler"
           type="button"
-          data-toggle="collapse"
-          data-target="#navbarsExampleDefault"
-          aria-controls="navbarsExampleDefault"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
         >
-          <span class="navbar-toggler-awesome fas fa-bars"></span>
-          <span class="navbar-toggler-awesome fas fa-times"></span>
+          <span class="navbar-toggler-icon"></span>
         </button>
-        <!-- end of mobile menu toggle button -->
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-          <ul class="navbar-nav ml-auto">
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="/index.html">video</a>
+              <a class="nav-link" href="#latest">Latest</a>
             </li>
             <li class="nav-item">
-              <a
-                class="nav-link page-scroll"
-                href="https://www.spreadshirt.com/shop/user/carman+terblanche/#?affiliateId=11625"
-                >shop</a
-              >
+              <a class="nav-link" href="#video">Video</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link page-scroll" href="#footer">contact</a>
+              <a class="nav-link" href="#music">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Back To Video</a>
             </li>
           </ul>
         </div>
       </div>
-      <!-- end of container -->
     </nav>
-    <!-- end of navbar -->
-    <!-- end of navigation -->
 
-    <!-- Content -->
-    <img src="/images/ocean_banner.webp" alt="hero" width="100%" />
-    <div class="container d-flex align-items-center" style="min-height: 100vh">
-      <div class="container mt-5">
-        <div class="row">
-          <div class="col-md-6">
-            <img src="/images/mcp.webp" width="100%" />
-          </div>
-          <div class="d-flex align-items-center">
-            <div class="container-fluid align-items-center">
-              <h2><strong>Mind Control Paradise</strong></h2>
-              <div class="dropdown">
-                <button
-                  class="btn btn-secondary dropdown-toggle"
-                  type="button"
-                  id="dropdownMenuButton"
-                  data-toggle="dropdown"
-                  aria-haspopup="true"
-                  aria-expanded="false"
-                >
-                  Listen Now
-                </button>
-                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                  <a
-                    class="dropdown-item"
-                    href="https://open.spotify.com/track/3AETXEydUV3f1pv6H1kcLd?si=154462c3404d4231"
-                    >Spotify</a
-                  >
-                  <a
-                    class="dropdown-item"
-                    href="https://music.apple.com/za/album/mind-control-paradise/1777367656?i=1777367657"
-                    >Apple Music</a
-                  >
-                </div>
+    <!-- Hero Section -->
+    <section
+      class="hero-section"
+      style="background-image: url('images/ocean_banner.webp')"
+    >
+      <div class="container">
+        <h1 class="hero-title">KRMN</h1>
+        <p class="hero-subtitle">NEW SINGLE OUT NOW</p>
+        <a href="#latest" class="btn btn-outline-light btn-lg">EXPLORE</a>
+      </div>
+    </section>
+
+    <!-- Latest Release Section -->
+    <section id="latest" class="latest-release">
+      <div class="container">
+        <h2 class="section-title text-center">Latest Release</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8 col-lg-6">
+            <div class="release-card p-4 text-center">
+              <img
+                src="/images/mcp.webp"
+                alt="Album Cover"
+                class="release-img"
+              />
+              <h3 class="release-title">Mind Control Paradise</h3>
+              <p class="release-date">RELEASED 6 DECEMBER 2024</p>
+              <div class="platform-links mb-4">
+                <a
+                  href="https://open.spotify.com/track/3AETXEydUV3f1pv6H1kcLd?si=154462c3404d4231"
+                  class="platform-btn"
+                  ><i class="fab fa-spotify"></i
+                ></a>
+                <a
+                  href="https://music.apple.com/za/album/mind-control-paradise-single/1777367656"
+                  class="platform-btn"
+                  ><i class="fab fa-apple"></i
+                ></a>
+                <a
+                  href="https://soundcloud.com/kawaii-neko-590374580/mind-control-paradise?si=9c17ff5f94e94f4fb278ea03d0607169&utm_source=clipboard&utm_medium=text&utm_campaign=social_sharing"
+                  class="platform-btn"
+                  ><i class="fab fa-soundcloud"></i
+                ></a>
+                <a href="https://youtu.be/oqOcyAqGt2w" class="platform-btn"
+                  ><i class="fab fa-youtube"></i
+                ></a>
+                <a
+                  href="https://krmn.bandcamp.com/track/mind-control-paradise"
+                  class="platform-btn"
+                  ><i class="fab fa-bandcamp"></i
+                ></a>
               </div>
-              <!--<h3>Coming 19 July</h3>-->
+              <a
+                href="https://distrokid.com/hyperfollow/krmn/mind-control-paradise"
+                class="btn btn-outline-light"
+                >STREAM NOW</a
+              >
             </div>
           </div>
-          <div class="d-flex align-items-center"></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div class="container d-flex align-items-center" style="min-height: 100vh">
-      <div class="container mt-5">
-        <iframe
-          style="border-radius: 12px"
-          src="https://open.spotify.com/embed/playlist/31GlP3PGC4ROVvw01xpuhw?utm_source=generator"
-          width="100%"
-          height="352"
-          frameborder="0"
-          allowfullscreen=""
-          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-          loading="lazy"
-        ></iframe>
-      </div>
-    </div>
-
-    <!-- music videos -->
-    <div class="container mt-5" style="min-height: 100vh">
+    <!-- Video Section -->
+    <section id="video" class="video-section">
       <div class="container">
-        <a href="https://youtu.be/2DuBbgU499A"
-          ><img src="images/best_cover.webp" width="100%"
-        /></a>
-        <div style="padding-top: 2vh">
-          <h3><strong>KRMN</strong> - Best (Official Music Video)</h3>
+        <h2 class="section-title text-center">Latest Video</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="video-container">
+              <!-- Placeholder for video embed -->
+              <iframe
+                width="966"
+                height="543"
+                src="https://www.youtube.com/embed/RG-TepeSYKE"
+                title="KRMN - Lights (Official Music Video)"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin"
+                allowfullscreen
+              ></iframe>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
+
+    <!-- Spotify Section -->
+    <section id="music" class="spotify-section">
+      <div class="container">
+        <h2 class="section-title text-center">Listen</h2>
+        <div class="row justify-content-center">
+          <div class="col-lg-8">
+            <div class="spotify-embed">
+              <!-- Spotify embed code -->
+              <iframe
+                style="border-radius: 12px"
+                src="https://open.spotify.com/embed/playlist/31GlP3PGC4ROVvw01xpuhw?utm_source=generator&theme=0"
+                width="100%"
+                height="352"
+                frameborder="0"
+                allowfullscreen=""
+                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+                loading="lazy"
+              ></iframe>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- Footer -->
-    <div class="footer" id="footer">
+    <footer class="footer">
       <div class="container">
         <div class="row">
-          <div class="col-md-4">
-            <div class="footer-col last">
-              <h4>Contact</h4>
-              <ul class="list-unstyled li-space-lg p-small">
-                <li class="media">
-                  <i class="fas fa-map-marker-alt"></i>
-                  <div class="media-body">Cape Town, South Africa</div>
-                </li>
-                <li class="media">
-                  <i class="fas fa-envelope"></i>
-                  <div class="media-body">
-                    <a class="white" href="mailto:carmanillustrations@gmail.com"
-                      >carmanillustrations@gmail.com</a
-                    >
-                  </div>
-                </li>
-              </ul>
-            </div>
+          <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+            <p class="copyright">© 2023 KRMN. ALL RIGHTS RESERVED.</p>
           </div>
-          <!-- end of col -->
-        </div>
-        <!-- end of row -->
-      </div>
-      <!-- end of container -->
-    </div>
-    <!-- end of footer -->
-    <!-- end of footer -->
-
-    <!-- Copyright -->
-    <div class="copyright">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-12">
-            <p class="p-small">Copyright © 2025</p>
+          <div class="col-md-6 text-center text-md-end">
+            <a
+              href="https://www.instagram.com/krmnmusic?igsh=MWl6ZWRkZDEzOXJt&utm_source=qr"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://www.tiktok.com/@krmnmusic?_t=ZM-8v0nFeG61fr&_r=1"
+              class="social-icon"
+              ><i class="fab fa-tiktok"></i
+            ></a>
+            <a href="https://www.youtube.com/@krmn" class="social-icon"
+              ><i class="fab fa-youtube"></i
+            ></a>
           </div>
-          <!-- end of col -->
         </div>
-        <!-- enf of row -->
       </div>
-      <!-- end of container -->
-    </div>
-    <!-- end of copyright -->
-    <!-- end of copyright -->
+    </footer>
 
-    <!-- Scripts -->
-    <script src="js/Music/jquery.min.js"></script>
-    <!-- jQuery for Bootstrap's JavaScript plugins -->
-    <script src="js/Music/popper.min.js"></script>
-    <!-- Popper tooltip library for Bootstrap -->
-    <script src="js/Music/bootstrap.min.js"></script>
-    <!-- Bootstrap framework -->
-    <script src="js/Music/jquery.easing.min.js"></script>
-    <!-- jQuery Easing for smooth scrolling between anchors -->
-    <script src="js/Music/swiper.min.js"></script>
-    <!-- Swiper for image and text sliders -->
-    <script src="js/Music/jquery.magnific-popup.js"></script>
-    <!-- Magnific Popup for lightboxes -->
-    <script src="js/Music/validator.min.js"></script>
-    <!-- Validator.js - Bootstrap plugin that validates forms -->
-    <script src="js/Music/scripts.js"></script>
-    <!-- Custom scripts -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Smooth scrolling for navigation links
+      document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+        anchor.addEventListener("click", function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute("href")).scrollIntoView({
+            behavior: "smooth",
+          });
+        });
+      });
+
+      // Navbar background change on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
+        } else {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        }
+      });
+    </script>
   </body>
 </html>

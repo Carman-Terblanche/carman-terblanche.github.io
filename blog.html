@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!--SCHEMA SEO-->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "MusicGroup",
+        "name": "KRMN",
+        "genre": "Hip-Hop/Electronic/Pop",
+        "url": "https://reverdesigns.art/music",
+        "sameAs": [
+          "https://www.instagram.com/krmnmusic?igsh=MWl6ZWRkZDEzOXJt&utm_source=qr",
+          "https://open.spotify.com/artist/1dextcrxNbNdVq5cHZhSgI?si=jkV8Gpa0SCq8js06qMNgUQ"
+        ]
+      }
+    </script>
+    <!-- Add Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KRMN | Thoughts</title>
+    <style>
+      :root {
+        --black: #000000;
+        --white: #ffffff;
+        --gray-light: #e0e0e0;
+        --gray-mid: #888888;
+        --gray-dark: #222222;
+        --accent: #ff4d4d;
+      }
+
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Helvetica, Arial, sans-serif;
+        background-color: var(--black);
+        color: var(--white);
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+      }
+      /* Loader - Same as music page */
+      .loader {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--black);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 9999;
+        transition: opacity 0.5s ease;
+      }
+
+      .loader-logo {
+        font-size: 3rem;
+        font-weight: 700;
+        letter-spacing: 5px;
+        color: var(--white);
+        animation: pulse 2s infinite;
+      }
+
+      @keyframes pulse {
+        0% {
+          opacity: 0.5;
+        }
+        50% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0.5;
+        }
+      }
+
+      .navbar {
+        background-color: rgba(0, 0, 0, 0.9) !important;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      }
+
+      .navbar-brand {
+        font-weight: 700;
+        letter-spacing: 2px;
+      }
+
+      .nav-link {
+        color: var(--white) !important;
+        font-weight: 300;
+        letter-spacing: 1px;
+        margin: 0 10px;
+        position: relative;
+      }
+
+      .nav-link:hover {
+        color: var(--gray-200) !important;
+      }
+
+      .nav-link:after {
+        content: "";
+        position: absolute;
+        width: 0;
+        height: 1px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--white);
+        visibility: hidden;
+        transition: all 0.3s ease-in-out;
+      }
+
+      .nav-link:hover:after {
+        visibility: visible;
+        width: 100%;
+      }
+
+      /* Blog-specific styles */
+      .hero-section {
+        height: 60vh;
+        background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+          url("/images/blog-banner.webp") no-repeat center center;
+        background-size: cover;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        text-align: center;
+      }
+
+      .hero-title {
+        font-size: 4rem;
+        font-weight: 700;
+        letter-spacing: 5px;
+        margin-bottom: 20px;
+        text-transform: uppercase;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        font-weight: 300;
+        letter-spacing: 3px;
+        margin-bottom: 30px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .section-title {
+        font-size: 2.5rem;
+        font-weight: 700;
+        letter-spacing: 3px;
+        margin-bottom: 50px;
+        text-transform: uppercase;
+        position: relative;
+        display: inline-block;
+      }
+
+      .section-title:after {
+        content: "";
+        position: absolute;
+        width: 50%;
+        height: 2px;
+        bottom: -10px;
+        left: 0;
+        background-color: var(--accent);
+      }
+
+      .container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 0 20px;
+      }
+
+      header {
+        padding: 80px 0 60px;
+        border-bottom: 1px solid var(--gray-dark);
+        text-align: center;
+      }
+
+      h1 {
+        font-size: 3rem;
+        margin: 0 0 10px;
+        font-weight: 700;
+        letter-spacing: -1px;
+      }
+
+      .subtitle {
+        color: var(--gray-mid);
+        font-size: 1.1rem;
+        margin: 0;
+        font-weight: 300;
+      }
+
+      .posts {
+        margin: 60px 0;
+      }
+
+      .post {
+        margin-bottom: 40px;
+        border: 1px solid var(--gray-dark);
+        border-radius: 4px;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+
+      .post:hover {
+        border-color: var(--gray-mid);
+      }
+
+      .post-header {
+        padding: 25px;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: rgba(255, 255, 255, 0.02);
+      }
+
+      .post-title {
+        font-size: 1.5rem;
+        margin: 0;
+        font-weight: 600;
+        transition: color 0.2s;
+      }
+
+      .post-header:hover .post-title {
+        color: var(--accent);
+      }
+
+      .post-date {
+        color: var(--gray-mid);
+        font-size: 0.85rem;
+        margin-top: 5px;
+      }
+
+      .post-toggle {
+        width: 24px;
+        height: 24px;
+        position: relative;
+      }
+
+      .post-toggle:before,
+      .post-toggle:after {
+        content: "";
+        position: absolute;
+        background-color: var(--white);
+        transition: all 0.3s ease;
+      }
+
+      .post-toggle:before {
+        width: 14px;
+        height: 2px;
+        left: 5px;
+        top: 11px;
+      }
+
+      .post-toggle:after {
+        width: 2px;
+        height: 14px;
+        left: 11px;
+        top: 5px;
+      }
+
+      .post.active .post-toggle:after {
+        transform: rotate(90deg);
+        opacity: 0;
+      }
+
+      .post-content {
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.5s ease, padding 0.3s ease;
+      }
+
+      .post.active .post-content {
+        max-height: 2000px; /* Adjust based on content */
+        padding: 0 25px 25px;
+      }
+
+      .post-image {
+        width: 100%;
+        height: auto;
+        margin: 20px 0;
+        border-radius: 2px;
+        opacity: 0.9;
+        transition: opacity 0.3s;
+      }
+
+      .post-image:hover {
+        opacity: 1;
+      }
+
+      footer {
+        padding: 80px 0;
+        text-align: center;
+        color: var(--gray-mid);
+        font-size: 0.9rem;
+        border-top: 1px solid var(--gray-dark);
+      }
+
+      @media (max-width: 768px) {
+        h1 {
+          font-size: 2.2rem;
+        }
+
+        .post-header {
+          padding: 20px;
+        }
+
+        .post-title {
+          font-size: 1.3rem;
+        }
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- Loading Animation -->
+    <div class="loader">
+      <div class="loader-logo">
+        <span>KRMN</span>
+      </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand" href="music.html">KRMN</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item">
+              <a class="nav-link" href="music.html">Music</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="blog.html">Blog</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html">Back To Video</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+      <div class="container">
+        <h1 class="hero-title">KRMN BLOG</h1>
+        <p class="hero-subtitle">
+          Behind the music: Creative process, inspirations, and studio stories
+        </p>
+      </div>
+    </section>
+
+    <div class="container">
+      <div class="posts">
+        <div class="post active">
+          <div
+            class="post-header"
+            onclick="this.parentElement.classList.toggle('active')"
+          >
+            <div>
+              <h2 class="post-title">The Making of "Mind Control Paradise"</h2>
+              <div class="post-date">March 28, 2025</div>
+            </div>
+            <div class="post-toggle"></div>
+          </div>
+
+          <div class="post-content">
+            <img
+              src="/images/mcp.webp"
+              alt="Studio session"
+              class="post-image"
+            />
+
+            <p>
+              I remember the exact moment this track started forming in my
+              head—it was after a <strong>PHFAT</strong> concert. There was
+              something about his raw, electronic energy that just clicked for
+              me. The way he twisted synths into something chaotic yet
+              controlled. I left that show itching to experiment, to push my own
+              sound into darker, synth-driven territory.
+            </p>
+
+            <h2>The Sound</h2>
+            <p>
+              I started with a simple <strong>arpeggiated synth</strong>—that
+              hypnotic loop you hear right at the beginning. It felt like the
+              perfect foundation, something repetitive but evolving. From there,
+              I layered <strong>punchy drums and sharp snares</strong>, then
+              drenched parts of it in
+              <strong>caustic industrial FX</strong>—little distortions,
+              glitches, anything to make it feel alive, almost unstable.
+            </p>
+
+            <h2>The Lyrics</h2>
+            <p>
+              I’ve never really leaned into
+              <strong>social commentary</strong> before, but the vibe of the
+              track demanded something sharp. I wanted it to be
+              <strong>direct but impactful</strong>, something that sticks. The
+              first words that came to me were:
+            </p>
+
+            <blockquote>"I’m living life on the stage."</blockquote>
+
+            <p>
+              It felt right—like that moment when nothing else exists but the
+              music, the crowd, the energy. It’s a <strong>headspace</strong>,
+              an escape from this dystopian universe that is very much real -
+              how our minds are being controlled by social media and the like.
+              The rest of the lyrics built around that idea, playing with the
+              tension between freedom and gratification, where
+              <strong>envy</strong> is the real currency.
+            </p>
+
+            <h2>The Finish</h2>
+            <p>
+              The first mix came together
+              <strong>within a day or so</strong>—one of those rare times when
+              everything just flows. No overthinking, no second-guessing. And
+              judging by the response? <strong>It’s a hit.</strong>
+            </p>
+
+            <p>
+              This track was a turning point for me—<strong
+                >heavier, synth-driven, unapologetic.</strong
+              >
+              If this is the direction my sound is heading, I’m all for it.
+            </p>
+
+            <p>
+              <strong
+                >"Mind Control Paradise" is out now—go lose yourself in
+                it.</strong
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <footer>
+        <p>© 2025 KRMN. All words and music my own.</p>
+      </footer>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      // Loader - Same as music page
+      window.addEventListener("load", function () {
+        document.querySelector(".loader").style.opacity = "0";
+        setTimeout(function () {
+          document.querySelector(".loader").style.display = "none";
+        }, 500);
+      });
+
+      // Navbar background change on scroll
+      window.addEventListener("scroll", function () {
+        const navbar = document.querySelector(".navbar");
+        if (window.scrollY > 50) {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.95)";
+        } else {
+          navbar.style.backgroundColor = "rgba(0, 0, 0, 0.9)";
+        }
+      });
+
+      // Auto-expand first post
+      document.addEventListener("DOMContentLoaded", function () {
+        const posts = document.querySelectorAll(".post");
+
+        posts.forEach((post) => {
+          post.addEventListener("click", function (e) {
+            // Close other posts when opening a new one
+            if (!this.classList.contains("active")) {
+              posts.forEach((p) => p.classList.remove("active"));
+              this.classList.add("active");
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

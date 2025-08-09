@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Archive</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #000;
+        color: #fff;
+        font-family: "Courier New", monospace;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .archive-container {
+        text-align: center;
+        width: 100%;
+        position: relative;
+        z-index: 1;
+      }
+
+      #enterBtn {
+        font-family: "Courier New", monospace;
+        background-color: transparent;
+        color: #fff;
+        border: 1px solid #fff;
+        padding: 15px 30px;
+        font-size: 1.5rem;
+        transition: all 0.5s ease;
+        border-radius: 0;
+        position: relative;
+        z-index: 2;
+      }
+
+      #enterBtn:hover {
+        background-color: #fff;
+        color: #000;
+      }
+
+      .code-display {
+        display: none;
+        max-width: 80%;
+        margin: 0 auto;
+        padding: 20px;
+        text-align: left;
+        font-size: 1.2rem;
+        white-space: pre-wrap;
+        border: 1px solid #333;
+        background-color: #111;
+        overflow-y: auto;
+        max-height: 70vh;
+        position: relative;
+        z-index: 2;
+      }
+
+      .expanded {
+        animation: expand 0.5s forwards;
+      }
+
+      @keyframes expand {
+        from {
+          transform: scale(1);
+        }
+        to {
+          transform: scale(1.05);
+        }
+      }
+
+      /* Glitch effect elements */
+      .glitch-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 0;
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      .glitch-active {
+        animation: glitch 0.1s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes glitch {
+        0% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(0, 255, 0, 0.1) 20%,
+            rgba(0, 255, 0, 0.1) 21%,
+            transparent 22%,
+            transparent 100%
+          );
+          transform: translate(0);
+        }
+        20% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(255, 0, 0, 0.1) 30%,
+            rgba(255, 0, 0, 0.1) 31%,
+            transparent 32%,
+            transparent 100%
+          );
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(0, 0, 255, 0.1) 40%,
+            rgba(0, 0, 255, 0.1) 41%,
+            transparent 42%,
+            transparent 100%
+          );
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(255, 255, 0, 0.1) 50%,
+            rgba(255, 255, 0, 0.1) 51%,
+            transparent 52%,
+            transparent 100%
+          );
+          transform: translate(2px, 2px);
+        }
+        80% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(255, 0, 255, 0.1) 60%,
+            rgba(255, 0, 255, 0.1) 61%,
+            transparent 62%,
+            transparent 100%
+          );
+          transform: translate(2px, -2px);
+        }
+        100% {
+          background: linear-gradient(
+            0deg,
+            transparent 0%,
+            rgba(0, 255, 255, 0.1) 70%,
+            rgba(0, 255, 255, 0.1) 71%,
+            transparent 72%,
+            transparent 100%
+          );
+          transform: translate(0);
+        }
+      }
+
+      .scanlines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          rgba(0, 255, 0, 0.03) 0%,
+          rgba(0, 255, 0, 0.03) 50%,
+          transparent 51%
+        );
+        background-size: 100% 4px;
+        z-index: 1;
+        pointer-events: none;
+        animation: scanline 8s linear infinite;
+      }
+
+      @keyframes scanline {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 100%;
+        }
+      }
+
+      .noise {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVGhD7cExAQAwDMCg+zfd2VAp5A8kSZKkP8xIkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiTpBQ8fIAELeOZQJQAAAABJRU5ErkJggg==");
+        opacity: 0.03;
+        z-index: 1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <!-- Add this just before </body> -->
+  <div class="crt-overlay">
+    <div class="crt-curvature"></div>
+    <div class="crt-scanlines"></div>
+    <div class="crt-vignette"></div>
+    <div class="crt-reflection"></div>
+  </div>
+
+  <style>
+    /* CRT Overlay Styles */
+    body {
+      background-color: #000;
+      color: #0f0;
+      font-family: "Courier New", monospace;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0;
+      padding: 20px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .crt-overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 9999;
+      overflow: hidden;
+    }
+
+    .crt-curvature {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.9);
+      border-radius: 2px;
+      border: 4px solid #111;
+    }
+
+    .crt-scanlines {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: linear-gradient(
+        rgba(18, 16, 16, 0) 50%,
+        rgba(0, 0, 0, 0.25) 50%
+      );
+      background-size: 100% 4px;
+      animation: scanline 6s linear infinite;
+    }
+
+    .crt-vignette {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7);
+    }
+
+    .crt-reflection {
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 20%;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.1) 0%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      animation: reflection 15s infinite linear;
+    }
+
+    @keyframes scanline {
+      0% {
+        background-position: 0 0;
+      }
+      100% {
+        background-position: 0 100%;
+      }
+    }
+
+    @keyframes reflection {
+      0% {
+        transform: translateY(-100%);
+        opacity: 0.5;
+      }
+      10% {
+        opacity: 0.3;
+      }
+      20% {
+        transform: translateY(500%);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(500%);
+        opacity: 0;
+      }
+    }
+  </style>
+  <body>
+    <div class="scanlines"></div>
+    <div class="noise"></div>
+    <div class="glitch-overlay" id="glitchOverlay"></div>
+
+    <div class="archive-container">
+      <button id="enterBtn" class="mb-4">ENTER</button>
+      <div id="codeDisplay" class="code-display">
+        There is no freedom in the market. Open your eyes. 25°45'13.1"S
+        28°12'33.8"E <br />
+
+        MESSAGE: Living costs money, money costs time, time costs freedom,
+        freedom costs sanity. What is the price of sanity?
+      </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+      document
+        .getElementById("enterBtn")
+        .addEventListener("click", function () {
+          const btn = this;
+          const codeDisplay = document.getElementById("codeDisplay");
+
+          // Animate button
+          btn.classList.add("expanded");
+
+          // Hide button after animation
+          setTimeout(() => {
+            btn.style.display = "none";
+            codeDisplay.style.display = "block";
+
+            // Optional: Scroll to center the code display
+            codeDisplay.scrollIntoView({ behavior: "smooth", block: "center" });
+          }, 500);
+        });
+
+      // Glitch effect functionality
+      const glitchOverlay = document.getElementById("glitchOverlay");
+
+      function triggerGlitch() {
+        // Random duration between 0.1s and 0.5s
+        const duration = Math.random() * 4000 + 100;
+
+        // Activate glitch
+        glitchOverlay.classList.add("glitch-active");
+
+        // Random glitch frequency (more frequent when code is displayed)
+        const isCodeDisplayed =
+          document.getElementById("codeDisplay").style.display === "block";
+        const baseInterval = isCodeDisplayed ? 3000 : 5000;
+        const nextGlitch = Math.random() * baseInterval + 700;
+
+        // Deactivate after duration
+        setTimeout(() => {
+          glitchOverlay.classList.remove("glitch-active");
+
+          // Schedule next glitch
+          setTimeout(triggerGlitch, nextGlitch);
+        }, duration);
+      }
+
+      // Start glitch effect
+      setTimeout(triggerGlitch, 2000);
+
+      // Add subtle static noise to the entire page
+      document.addEventListener("DOMContentLoaded", () => {
+        // This is already handled by the noise div with CSS
+      });
+    </script>
+  </body>
+</html>

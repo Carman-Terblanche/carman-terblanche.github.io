@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Verification</title>
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <style>
+      body {
+        background-color: #000;
+        color: #0f0;
+        font-family: "Courier New", monospace;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin: 0;
+        padding: 20px;
+        overflow: hidden;
+        position: relative;
+      }
+
+      .terminal-container {
+        width: 100%;
+        max-width: 800px;
+        position: relative;
+        z-index: 10;
+      }
+
+      .prompt {
+        color: #0f0;
+        margin-bottom: 10px;
+      }
+
+      #inputField {
+        background-color: #000;
+        color: #0f0;
+        border: 1px solid #0f0;
+        font-family: "Courier New", monospace;
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border-radius: 0;
+      }
+
+      #submitBtn {
+        background-color: transparent;
+        color: #0f0;
+        border: 1px solid #0f0;
+        padding: 10px 20px;
+        font-family: "Courier New", monospace;
+        cursor: pointer;
+        transition: all 0.3s;
+      }
+
+      #submitBtn:hover {
+        background-color: #0f0;
+        color: #000;
+      }
+
+      #result {
+        margin-top: 20px;
+        min-height: 100px;
+        border: 1px solid #333;
+        padding: 15px;
+        display: none;
+      }
+
+      /* Glitch effect elements */
+      .glitch-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: transparent;
+        z-index: 1;
+        pointer-events: none;
+        opacity: 0;
+      }
+
+      .glitch-active {
+        animation: glitch 0.1s linear infinite;
+        opacity: 0.7;
+      }
+
+      @keyframes glitch {
+        0% {
+          transform: translate(0);
+        }
+        20% {
+          transform: translate(-2px, 2px);
+        }
+        40% {
+          transform: translate(-2px, -2px);
+        }
+        60% {
+          transform: translate(2px, 2px);
+        }
+        80% {
+          transform: translate(2px, -2px);
+        }
+        100% {
+          transform: translate(0);
+        }
+      }
+
+      /* CRT Overlay Styles */
+      .crt-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 2;
+        overflow: hidden;
+      }
+
+      .crt-curvature {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 60px rgba(0, 0, 0, 0.9);
+        border-radius: 2px;
+        border: 4px solid #111;
+      }
+
+      .crt-scanlines {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(
+          rgba(18, 16, 16, 0) 50%,
+          rgba(0, 255, 0, 0.03) 50%
+        );
+        background-size: 100% 4px;
+        animation: scanline 6s linear infinite;
+      }
+
+      .crt-vignette {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        box-shadow: inset 0 0 200px rgba(0, 0, 0, 0.7);
+      }
+
+      .crt-reflection {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20%;
+        background: linear-gradient(
+          180deg,
+          rgba(0, 255, 0, 0.1) 0%,
+          rgba(0, 255, 0, 0) 100%
+        );
+        animation: reflection 15s infinite linear;
+      }
+
+      @keyframes scanline {
+        0% {
+          background-position: 0 0;
+        }
+        100% {
+          background-position: 0 100%;
+        }
+      }
+
+      @keyframes reflection {
+        0% {
+          transform: translateY(-100%);
+          opacity: 0.5;
+        }
+        10% {
+          opacity: 0.3;
+        }
+        20% {
+          transform: translateY(500%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateY(500%);
+          opacity: 0;
+        }
+      }
+
+      .noise {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABOSURBVGhD7cExAQAwDMCg+zfd2VAp5A8kSZKkP8xIkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiRJkiTpBQ8fIAELeOZQJQAAAABJRU5ErkJggg==");
+        opacity: 0.03;
+        z-index: 1;
+        pointer-events: none;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="noise"></div>
+    <div class="crt-overlay">
+      <div class="crt-curvature"></div>
+      <div class="crt-scanlines"></div>
+      <div class="crt-vignette"></div>
+      <div class="crt-reflection"></div>
+    </div>
+    <div class="glitch-overlay" id="glitchOverlay"></div>
+
+    <div class="terminal-container">
+      <div class="prompt">>WHAT IS THE PRICE OF SANITY?</div>
+      <input
+        type="text"
+        id="inputField"
+        autocomplete="off"
+        autocorrect="off"
+        autocapitalize="off"
+        spellcheck="false"
+      />
+      <button id="submitBtn">SUBMIT</button>
+      <div id="result"></div>
+    </div>
+
+    <script>
+      // Answer obfuscation - multiple techniques combined
+      const answerParts = [
+        String.fromCharCode(109), // m
+        (() => {
+          return "o";
+        })(),
+        window.atob("bg==").charAt(0), // n
+        ["e", "y"].join("").substring(0, 1), // e
+        (1).toString(2).replace("1", "y"), // y
+      ];
+
+      const correctAnswer = answerParts.join("");
+
+      // Glitch effect functionality
+      const glitchOverlay = document.getElementById("glitchOverlay");
+
+      function triggerGlitch() {
+        const duration = Math.random() * 400 + 100;
+        glitchOverlay.classList.add("glitch-active");
+
+        setTimeout(() => {
+          glitchOverlay.classList.remove("glitch-active");
+          setTimeout(triggerGlitch, Math.random() * 5000 + 2000);
+        }, duration);
+      }
+
+      // Start glitch effect
+      setTimeout(triggerGlitch, 2000);
+
+      // Submit handler
+      document
+        .getElementById("submitBtn")
+        .addEventListener("click", function () {
+          const userInput = document
+            .getElementById("inputField")
+            .value.trim()
+            .toLowerCase();
+          const resultDiv = document.getElementById("result");
+
+          // Additional client-side validation that doesn't reveal the answer
+          const validateInput = (input) => {
+            if (input.length !== 5) return false;
+            const charCodes = input.split("").map((c) => c.charCodeAt(0));
+            return (
+              charCodes[0] === 109 &&
+              charCodes[1] === 111 &&
+              charCodes[2] === 110 &&
+              charCodes[3] === 101 &&
+              charCodes[4] === 121
+            );
+          };
+
+          if (validateInput(userInput)) {
+            resultDiv.style.display = "block";
+            resultDiv.style.color = "#0f0";
+            resultDiv.innerHTML = `
+                    > VERIFICATION SUCCESSFUL<br><br>
+                    So you will walk into the lair of the beast, look it in the eye - and you will go to war.<br><br>
+                    This is your mission. This is your quest. There is nothing else left.<br><br>
+                    The gods made you a warrior for a reason! It's your calling.<br><br>
+                    Why suffer the past, when there is a new road ahead? The only one that makes any sense...
+                `;
+
+            // Special glitch effect for success
+            for (let i = 0; i < 3; i++) {
+              setTimeout(() => {
+                glitchOverlay.classList.add("glitch-active");
+                setTimeout(
+                  () => glitchOverlay.classList.remove("glitch-active"),
+                  100
+                );
+              }, i * 200);
+            }
+          } else {
+            resultDiv.style.display = "block";
+            resultDiv.style.color = "#f00";
+            resultDiv.textContent = "> VERIFICATION FAILED";
+
+            // Error glitch effect
+            glitchOverlay.style.animationDuration = "0.05s";
+            glitchOverlay.classList.add("glitch-active");
+            setTimeout(() => {
+              glitchOverlay.classList.remove("glitch-active");
+              glitchOverlay.style.animationDuration = "0.1s";
+            }, 500);
+          }
+        });
+
+      // Also trigger on Enter key
+      document
+        .getElementById("inputField")
+        .addEventListener("keypress", function (e) {
+          if (e.key === "Enter") {
+            document.getElementById("submitBtn").click();
+          }
+        });
+    </script>
+  </body>
+</html>

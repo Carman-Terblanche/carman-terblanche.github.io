@@ -291,10 +291,10 @@
             resultDiv.style.color = "#0f0";
             resultDiv.innerHTML = `
                     > VERIFICATION SUCCESSFUL<br><br>
-                    So you will walk into the lair of the beast, look it in the eye - and you will go to war.<br><br>
+                    "So you will walk into the lair of the beast, look it in the eye - and you will go to war.<br><br>
                     This is your mission. This is your quest. There is nothing else left.<br><br>
                     The gods made you a warrior for a reason! It's your calling.<br><br>
-                    Why suffer the past, when there is a new road ahead? The only one that makes any sense...
+                    Why suffer the past, when there is a new road ahead? The only one that makes any sense..." -Zynbel
                 `;
 
             // Special glitch effect for success
@@ -310,7 +310,8 @@
           } else {
             resultDiv.style.display = "block";
             resultDiv.style.color = "#f00";
-            resultDiv.textContent = "> VERIFICATION FAILED";
+            resultDiv.textContent =
+              "> VERIFICATION FAILED: You are part of the system that fails you. Dig deeper.";
 
             // Error glitch effect
             glitchOverlay.style.animationDuration = "0.05s";

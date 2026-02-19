@@ -155,16 +155,13 @@ img {
 }
 
 .nav-link {
-  color:var(--secondary) ;
-  font-size: 0.9rem;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  padding: 10px 15px !important;
+  color: var(--secondary) !important;
   position: relative;
 }
 
+/* underline */
 .nav-link::after {
+  content: "";
   position: absolute;
   width: 0;
   height: 2px;
@@ -174,10 +171,16 @@ img {
   transition: var(--transition);
 }
 
+/* hover effect */
 .nav-link:hover::after {
-  color:var(--secondary) !important ; 
   width: calc(100% - 30px);
 }
+
+/* prevent Bootstrap turning links dark */
+.nav-link:hover {
+  color: var(--secondary) !important;
+}
+
 
 .social-links a {
   display: inline-block;
@@ -209,8 +212,9 @@ img {
   background-color: #000000 !important;
 }
 
-.navbar-toggler:focus {
-  box-shadow: none;
+/* Make burger icon white */
+.navbar-toggler-icon {
+  filter: invert(1);
 }
 
 /* Hero Section */

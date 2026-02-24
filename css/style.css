@@ -416,6 +416,7 @@ img {
 
 .project-link:hover .project-overlay {
   opacity: 1;
+  transform: scale(1.1)
 }
 
 .project-link:hover .project-info {
@@ -428,6 +429,14 @@ img {
 
 .project-link:hover .project-image img {
   transform: scale(1.1);
+}
+
+.social-card:hover {
+  transform: scale(0.8);
+}
+
+.social-card{
+  transition: var(--transition);
 }
 
 /* About Section */

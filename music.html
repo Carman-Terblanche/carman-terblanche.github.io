@@ -185,6 +185,28 @@
         background-color: var(--white);
       }
 
+      /* Dropdown container */
+.dropdown-menu {
+  background-color: transparent !important;
+  border: none;
+  box-shadow: none;
+}
+
+/* Dropdown items */
+.dropdown-menu .dropdown-item {
+  color: white !important;
+  background-color: transparent !important;
+  font-size: 1.25rem; /* matches btn-lg */
+  padding: 0.5rem 1rem;
+}
+
+/* Hover state */
+.dropdown-menu .dropdown-item:hover {
+  color: black !important;
+  background-color: white !important;
+}
+
+
       .latest-release {
         background-color: var(--gray-900);
         padding: 80px 0;
@@ -448,11 +470,11 @@
             <a href="#latest" class="btn btn-outline-light btn-lg">EXPLORE</a>
             <button class="dropdown-toggle btn btn-outline-light btn-lg" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
             LISTEN</button>
-            <div class="dropdown-menu btn-outline btn-lg" aria-labelledby="dropdownMenuButton">
-              <a class="dropdown-item" href="https://open.spotify.com/artist/1dextcrxNbNdVq5cHZhSgI?si=6n5JIgwlRNaV1BPTNZwK0g">Spotify</a>
-              <a class="dropdown-item" href="https://music.apple.com/za/artist/krmn/1607903512">Apple Music</a>
-              <a class="dropdown-item" href="https://tidal.com/artist/9511470/u">Tidal</a>
-              <a class="dropdown-item" href="https://krmn.bandcamp.com">Bandcamp</a>
+            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+              <a class="dropdown-item btn-outline-light btn-lg" href="https://open.spotify.com/artist/1dextcrxNbNdVq5cHZhSgI?si=6n5JIgwlRNaV1BPTNZwK0g">Spotify</a>
+              <a class="dropdown-item btn-outline-light btn-lg" href="https://music.apple.com/za/artist/krmn/1607903512">Apple Music</a>
+              <a class="dropdown-item btn-outline-light btn-lg" href="https://tidal.com/artist/9511470/u">Tidal</a>
+              <a class="dropdown-item btn-outline-light btn-lg" href="https://krmn.bandcamp.com">Bandcamp</a>
             </div>
             <a href="mailto:carmanillustrations@gmail.com" class="btn btn-outline-light btn-lg">BOOKINGS</a>
           </div>

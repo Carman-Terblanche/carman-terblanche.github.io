@@ -1903,4 +1903,170 @@ section {
     max-width: 220px;
   }
 }
+/* ========================= */
+/* 🎯 MUSIC PAGE ONLY STYLES */
+/* ========================= */
 
+/* Hero section content centering - Music Page Only */
+.music-page .hero .hero-content {
+  text-align: center;
+}
+
+.music-page .hero .hero-content .row {
+  justify-content: center;
+}
+
+.music-page .hero .hero-content .col-lg-8 {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Center the CTA buttons and keep them inline - Music Page Only */
+.music-page .hero .cta-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.music-page .hero .cta-buttons .btn {
+  margin-right: 0;
+  margin-bottom: 0;
+}
+
+/* Responsive adjustments for mobile - Music Page Only */
+@media (max-width: 767.98px) {
+  .music-page .hero .cta-buttons {
+    gap: 15px;
+  }
+  
+  .music-page .hero .cta-buttons .btn {
+    margin: 0;
+  }
+}
+
+/* GREEN CURSOR FOR MUSIC PAGE HERO ONLY - OVERRIDE ALL RED */
+.music-page .cursor,
+.music-page .cursor-blur {
+  transition: all 0.2s ease;
+}
+
+/* When hovering over ANY hero section on music page, change cursor to green */
+.music-page .hero:hover ~ .cursor,
+.music-page .hero:hover ~ .cursor-blur,
+.music-page:has(.hero:hover) .cursor,
+.music-page:has(.hero:hover) .cursor-blur {
+  border-color: #00ff9d !important;
+  background: rgba(0, 255, 157, 0.15) !important;
+  box-shadow: 0 0 10px rgba(0, 255, 157, 0.3) !important;
+}
+
+/* Override the red accent color that appears on hover */
+.music-page .hero:hover ~ .cursor,
+.music-page .hero:hover ~ .cursor-blur {
+  --accent-override: #00ff9d;
+}
+
+/* Force the cursor border to be green on hero hover */
+.music-page .hero:hover ~ .cursor {
+  border-color: #00ff9d !important;
+}
+
+/* Force the cursor blur background to be green on hero hover */
+.music-page .hero:hover ~ .cursor-blur {
+  background: rgba(0, 255, 157, 0.15) !important;
+}
+
+/* DROPDOWN MENU - FIXED POSITIONING */
+.music-page .dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.music-page .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+  background: rgba(0, 0, 0, 0.95) !important;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 0.5rem 0;
+  margin-top: 10px;
+  min-width: 160px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.music-page .dropdown-item {
+  color: #ffffff !important;
+  font-weight: 500;
+  padding: 0.75rem 1.5rem;
+  transition: all 0.3s ease;
+  background: transparent !important;
+  text-align: center;
+}
+
+.music-page .dropdown-item:hover {
+  background: rgba(0, 255, 157, 0.2) !important;
+  color: #00ff9d !important;
+  padding-left: 2rem;
+}
+
+.music-page .hero .btn.dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.music-page .hero .btn.dropdown-toggle::after {
+  margin-left: 8px;
+}
+
+/* Fix dropdown positioning so it doesn't go behind the bookings button */
+.music-page .hero .cta-buttons {
+  position: relative;
+  z-index: 1;
+}
+
+.music-page .hero .cta-buttons .dropdown {
+  position: relative;
+  z-index: 100;
+}
+
+.music-page .hero .cta-buttons .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 1050;
+}
+
+.music-page .hero .cta-buttons .btn:not(.dropdown-toggle) {
+  position: relative;
+  z-index: 1;
+}
+
+/* Ensure dropdown appears above other buttons */
+.music-page .hero .cta-buttons .dropdown.show {
+  z-index: 1050;
+}
+
+.music-page .hero .cta-buttons .dropdown.show .dropdown-menu {
+  display: block;
+}
+
+/* Mobile adjustments */
+@media (max-width: 767.98px) {
+  .music-page .dropdown-menu {
+    min-width: 140px;
+  }
+  
+  .music-page .dropdown-item {
+    padding: 0.6rem 1rem;
+    font-size: 0.9rem;
+  }
+}

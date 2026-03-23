@@ -1332,6 +1332,11 @@ section {
   transition: transform 0.3s ease;
 }
 
+/* Cancel generic img scale — card-level scale handles the zoom */
+.social-card .project-link:hover .project-image img {
+  transform: none;
+}
+
 .social-card .project-overlay {
   position: absolute;
   top: 0;

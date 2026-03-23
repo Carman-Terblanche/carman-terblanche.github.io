@@ -2013,9 +2013,91 @@ section {
   .music-page .dropdown-menu {
     min-width: 140px;
   }
-  
+
   .music-page .dropdown-item {
     padding: 0.6rem 1rem;
     font-size: 0.9rem;
+  }
+}
+
+/* ============================================= */
+/* 📱 MOBILE ONLY OPTIMIZATIONS (≤ 767.98px)    */
+/* Desktop styles are completely unaffected      */
+/* ============================================= */
+
+@media (max-width: 767.98px) {
+
+  /* --- Cursor: hide on touch devices --- */
+  .cursor,
+  .cursor-blur {
+    display: none;
+  }
+
+  /* --- Section padding: reduce from 100px to 60px --- */
+  .work-section,
+  .about-section,
+  .services-section,
+  .contact-section {
+    padding: 60px 0;
+  }
+
+  /* --- Hero: reduce min-height --- */
+  .hero {
+    min-height: 500px;
+  }
+
+  /* --- Navbar brand: scale down --- */
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+
+  /* --- Back-to-top: move closer to edge so it doesn't cover content --- */
+  .back-to-top {
+    bottom: 20px;
+    right: 15px;
+    width: 42px;
+    height: 42px;
+  }
+
+  /* --- Forms: prevent iOS zoom-on-focus (requires font-size ≥ 16px) --- */
+  .form-control {
+    font-size: 16px;
+    padding: 12px;
+  }
+}
+
+/* ============================================= */
+/* 📱 SMALL PHONES (≤ 575.98px)                 */
+/* ============================================= */
+
+@media (max-width: 575.98px) {
+
+  /* --- Section padding: reduce further to 40px --- */
+  .work-section,
+  .about-section,
+  .services-section,
+  .contact-section {
+    padding: 40px 0;
+  }
+
+  /* --- Hero: tighter on small phones --- */
+  .hero {
+    min-height: 420px;
+  }
+
+  /* --- Section titles --- */
+  .section-title {
+    font-size: 1.6rem;
+  }
+
+  /* --- Buttons: ensure 44px minimum touch target height --- */
+  .btn {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+
+  /* --- Navbar brand --- */
+  .navbar-brand {
+    font-size: 1.1rem;
   }
 }

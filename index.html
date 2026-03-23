@@ -4,6 +4,11 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Rêver | Cinematic Videography & Editing</title>
+    <!-- Preconnect to CDN domains -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <meta
       name="description"
       content="Professional videography and video editing services by Carman Terblanche"
@@ -69,6 +74,13 @@
  
  <script>
 document.addEventListener("DOMContentLoaded", () => {
+  // --- Cached DOM references (queried once, not on every event) ---
+  const navbar = document.querySelector(".navbar");
+  const backToTop = document.getElementById("backToTop");
+  const navbarCollapse = document.querySelector(".navbar-collapse");
+  const cursor = document.querySelector('.cursor');
+  const cursorBlur = document.querySelector('.cursor-blur');
+
   // Loader
   window.addEventListener("load", function () {
     const loader = document.querySelector(".loader");
@@ -80,59 +92,41 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
-  // Navbar scroll effect
-  const navbar = document.querySelector(".navbar");
+  // Navbar scroll + back-to-top visibility (single scroll listener)
   window.addEventListener("scroll", () => {
-    if (navbar) {
-      navbar.classList.toggle("scrolled", window.scrollY > 50);
-    }
-    
-    const backToTop = document.getElementById("backToTop");
+    if (navbar) navbar.classList.toggle("scrolled", window.scrollY > 50);
     if (backToTop) {
       backToTop.style.opacity = window.scrollY > 100 ? "1" : "0";
       backToTop.style.visibility = window.scrollY > 100 ? "visible" : "hidden";
     }
   });
 
-  // SPECIFIC HANDLER FOR HERO BUTTONS
-  const heroButtons = document.querySelectorAll('.hero .btn');
-  heroButtons.forEach(button => {
+  // Hero button clicks
+  document.querySelectorAll('.hero .btn').forEach(button => {
     button.addEventListener('click', function(e) {
       e.preventDefault();
-      e.stopPropagation(); // Stop event bubbling
-      
+      e.stopPropagation();
       const targetId = this.getAttribute('href');
       if (targetId && targetId !== '#') {
         const targetElement = document.querySelector(targetId);
         if (targetElement) {
-          // Close mobile menu if open
-          const navbarCollapse = document.querySelector(".navbar-collapse");
           if (navbarCollapse && navbarCollapse.classList.contains("show")) {
             navbarCollapse.classList.remove("show");
           }
-          
-          
         }
       }
     });
   });
 
-  // Handle all other anchor links (excluding buttons)
+  // Anchor smooth scroll
   document.querySelectorAll('a[href^="#"]:not(.hero .btn)').forEach((anchor) => {
     anchor.addEventListener("click", function (e) {
       e.preventDefault();
-      
       const targetId = this.getAttribute("href");
       if (targetId === "#") return;
-      
       const targetElement = document.querySelector(targetId);
       if (targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: "smooth",
-        });
-
-        const navbarCollapse = document.querySelector(".navbar-collapse");
+        window.scrollTo({ top: targetElement.offsetTop - 80, behavior: "smooth" });
         if (navbarCollapse && navbarCollapse.classList.contains("show")) {
           navbarCollapse.classList.remove("show");
         }
@@ -144,18 +138,12 @@ document.addEventListener("DOMContentLoaded", () => {
   if (typeof Fancybox !== 'undefined') {
     Fancybox.bind("[data-fancybox]", {
       Thumbs: false,
-      Toolbar: {
-        display: {
-          left: [],
-          middle: [],
-          right: ["close"],
-        },
-      },
+      Toolbar: { display: { left: [], middle: [], right: ["close"] } },
     });
   }
 
   // Back to top
-  document.getElementById("backToTop")?.addEventListener("click", function (e) {
+  backToTop?.addEventListener("click", function (e) {
     e.preventDefault();
     window.scrollTo({ top: 0, behavior: "smooth" });
   });
@@ -163,79 +151,67 @@ document.addEventListener("DOMContentLoaded", () => {
   // Lenis smooth scroll
   if (typeof Lenis !== 'undefined') {
     const lenis = new Lenis({ smooth: true });
-    function raf(time) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
     requestAnimationFrame(raf);
   }
 
-  // Mouse move for background effect
+  // Single merged mousemove listener (background + cursor)
   document.addEventListener("mousemove", (e) => {
     document.body.style.setProperty("--x", e.clientX + "px");
     document.body.style.setProperty("--y", e.clientY + "px");
-  });
-
-  // Cursor effects - EXCLUDE BUTTONS
-  const cursor = document.querySelector('.cursor');
-  const blur = document.querySelector('.cursor-blur');
-  
-  if (cursor && blur) {
-    document.addEventListener('mousemove', (e) => {
+    if (cursor && cursorBlur) {
       cursor.style.left = e.clientX + 'px';
       cursor.style.top = e.clientY + 'px';
-      blur.style.left = e.clientX + 'px';
-      blur.style.top = e.clientY + 'px';
-    });
+      cursorBlur.style.left = e.clientX + 'px';
+      cursorBlur.style.top = e.clientY + 'px';
+    }
+  });
 
-    // Only apply to non-button elements
+  // Cursor scale on hover
+  if (cursor && cursorBlur) {
     document.querySelectorAll('a:not(.btn), .project-card:not(.btn)').forEach(el => {
       el.addEventListener('mouseenter', () => {
         cursor.style.transform = "translate(-50%,-50%) scale(2)";
-        blur.style.transform = "translate(-50%,-50%) scale(2.5)";
+        cursorBlur.style.transform = "translate(-50%,-50%) scale(2.5)";
       });
       el.addEventListener('mouseleave', () => {
         cursor.style.transform = "translate(-50%,-50%) scale(1)";
-        blur.style.transform = "translate(-50%,-50%) scale(1)";
+        cursorBlur.style.transform = "translate(-50%,-50%) scale(1)";
       });
     });
   }
 
-  // 3D tilt - EXCLUDE BUTTON AREAS
+  // 3D tilt — throttled with requestAnimationFrame
   document.querySelectorAll('.project-card').forEach(card => {
+    let rafId = null;
     card.addEventListener('mousemove', (e) => {
       if (e.target.closest('.btn')) return;
-      
-      const rect = card.getBoundingClientRect();
-      const x = e.clientX - rect.left;
-      const y = e.clientY - rect.top;
-
-      const rotateX = (y / rect.height - 0.5) * 8;
-      const rotateY = (x / rect.width - 0.5) * -8;
-
-      card.style.transform =
-        `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+      if (rafId) return;
+      rafId = requestAnimationFrame(() => {
+        const rect = card.getBoundingClientRect();
+        const rotateX = ((e.clientY - rect.top) / rect.height - 0.5) * 8;
+        const rotateY = ((e.clientX - rect.left) / rect.width - 0.5) * -8;
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+        rafId = null;
+      });
     });
-
     card.addEventListener('mouseleave', () => {
+      if (rafId) { cancelAnimationFrame(rafId); rafId = null; }
       card.style.transform = "perspective(1000px) rotateX(0) rotateY(0) scale(1)";
     });
   });
 
   // Scroll reveal
   const reveals = document.querySelectorAll(".project-card, .service-card, .about-content, .contact-form");
-  
   const revealOnScroll = () => {
     const trigger = window.innerHeight * 0.85;
     reveals.forEach((el, i) => {
-      const top = el.getBoundingClientRect().top;
-      if (top < trigger) {
+      if (el.getBoundingClientRect().top < trigger) {
         el.classList.add("reveal", "active");
         el.style.transitionDelay = (i % 3) * 0.1 + "s";
       }
     });
   };
-
   window.addEventListener("scroll", revealOnScroll);
   revealOnScroll();
 });
@@ -286,12 +262,12 @@ document.addEventListener("DOMContentLoaded", () => {
             <a
               href="https://www.instagram.com/krmnmusic?igsh=MWl6ZWRkZDEzOXJt&utm_source=qr"
               target="_blank"
-              ><i class="fab fa-instagram"></i
+               rel="noopener noreferrer"><i class="fab fa-instagram"></i
             ></a>
             <a
               href="https://www.linkedin.com/in/carman-terblanche/"
               target="_blank"
-              ><i class="fab fa-linkedin-in"></i
+               rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i
             ></a>
           </div>
         </div>
@@ -606,7 +582,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Post 1 -->
         <div class="col-md-6 col-lg-4 social-card">
-          <a href="https://www.instagram.com/reel/C8e3LALOq7X/?igsh=cm1pOWhmMnc1MmEw" target="_blank" class="project-link">
+          <a href="https://www.instagram.com/reel/C8e3LALOq7X/?igsh=cm1pOWhmMnc1MmEw" target="_blank" class="project-link" rel="noopener noreferrer">
             <div class="project-image">
               <img src="images/social media/southsky1.webp" alt="Behind the Scenes" loading="lazy" />
               <div class="project-overlay">
@@ -624,7 +600,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Post 2 -->
         <div class="col-md-6 col-lg-4 social-card">
-          <a href="https://www.instagram.com/reel/C-Fm5SQxFnm/?igsh=MXN3a2xtbHd6bGNzbQ==" target="_blank" class="project-link">
+          <a href="https://www.instagram.com/reel/C-Fm5SQxFnm/?igsh=MXN3a2xtbHd6bGNzbQ==" target="_blank" class="project-link" rel="noopener noreferrer">
             <div class="project-image">
               <img src="images/social media/holocene1.webp" alt="Editing Tutorial" loading="lazy" />
               <div class="project-overlay">
@@ -642,7 +618,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         <!-- Post 3 -->
         <div class="col-md-6 col-lg-4 social-card">
-          <a href="https://vt.tiktok.com/ZSDqFg4G6/" target="_blank" class="project-link">
+          <a href="https://vt.tiktok.com/ZSDqFg4G6/" target="_blank" class="project-link" rel="noopener noreferrer">
             <div class="project-image">
               <img src="images/social media/realestate1.webp" alt="Quick Tips" loading="lazy" />
               <div class="project-overlay">
@@ -660,7 +636,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
          <!-- Post 4 -->
         <div class="col-md-6 col-lg-4 social-card">
-          <a href="https://youtube.com/shorts/YCbaDq8asN4?si=L3nlvZ07ZDV0bgyx" target="_blank" class="project-link">
+          <a href="https://youtube.com/shorts/YCbaDq8asN4?si=L3nlvZ07ZDV0bgyx" target="_blank" class="project-link" rel="noopener noreferrer">
             <div class="project-image">
               <img src="images/social media/krmn1.jpg" alt="Quick Tips" loading="lazy" />
               <div class="project-overlay">
@@ -1187,12 +1163,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a
                   href="https://www.instagram.com/carman_terblanche"
                   target="_blank"
-                  ><i class="fab fa-instagram"></i
+                   rel="noopener noreferrer"><i class="fab fa-instagram"></i
                 ></a>
                 <a
                   href="https://www.linkedin.com/in/carman-terblanche/"
                   target="_blank"
-                  ><i class="fab fa-linkedin-in"></i
+                   rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i
                 ></a>
           
               </div>
@@ -1286,12 +1262,12 @@ document.addEventListener("DOMContentLoaded", () => {
                 <a
                   href="https://www.instagram.com/carman_terblanche"
                   target="_blank"
-                  ><i class="fab fa-instagram"></i
+                   rel="noopener noreferrer"><i class="fab fa-instagram"></i
                 ></a>
                 <a
                   href="https://www.linkedin.com/in/carman-terblanche/"
                   target="_blank"
-                  ><i class="fab fa-linkedin-in"></i
+                   rel="noopener noreferrer"><i class="fab fa-linkedin-in"></i
                 ></a>
               </div>
             </div>

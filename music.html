@@ -81,6 +81,62 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
+    <style>
+      /* Music page hero overrides */
+      .music-page {
+        --accent: #2f8010;
+        --music-accent-rgb: 47, 128, 16;
+      }
+
+      .music-page::before {
+        background:
+          radial-gradient(
+            circle at 20% 20%,
+            rgba(var(--music-accent-rgb), 0.14),
+            transparent
+          ),
+          radial-gradient(
+            circle at 80% 80%,
+            rgba(var(--music-accent-rgb), 0.12),
+            transparent
+          );
+      }
+
+      .music-page::after {
+        background: radial-gradient(
+          circle at var(--x, 50%) var(--y, 50%),
+          rgba(var(--music-accent-rgb), 0.12),
+          transparent 40%
+        );
+      }
+
+      .music-page .hero::before {
+        background: radial-gradient(
+          circle,
+          rgba(var(--music-accent-rgb), 0.24),
+          transparent 65%
+        );
+      }
+
+      /* Match bright-green overrides in shared stylesheet */
+      .music-page .hero:hover ~ .cursor,
+      .music-page .hero:hover ~ .cursor-blur,
+      .music-page:has(.hero:hover) .cursor,
+      .music-page:has(.hero:hover) .cursor-blur {
+        border-color: #2f8010 !important;
+        background: rgba(var(--music-accent-rgb), 0.15) !important;
+        box-shadow: 0 0 10px rgba(var(--music-accent-rgb), 0.3) !important;
+      }
+
+      .music-page .dropdown-item:hover {
+        background: rgba(var(--music-accent-rgb), 0.2) !important;
+        color: #2f8010 !important;
+      }
+
+      .music-page .hero .display-1 {
+        font-family: "Montserrat", sans-serif;
+      }
+    </style>
   </head>
 
   <body class="music-page">
@@ -144,18 +200,6 @@
 
     <!-- Hero Section - Music Page -->
     <section id="home" class="hero">
-      <div class="hero-video">
-        <video
-          autoplay
-          muted
-          loop
-          playsinline
-          poster="images/Music/hero-poster.jpg"
-        >
-          <source src="videos/music/hero.mp4" type="video/mp4" />
-        </video>
-        <div class="overlay"></div>
-      </div>
       <div class="hero-content">
         <div class="container">
           <div class="row justify-content-center">

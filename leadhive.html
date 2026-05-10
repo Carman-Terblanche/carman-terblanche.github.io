@@ -731,53 +731,6 @@
         border-radius: 10px;
       }
 
-      /* ── Stack Section ── */
-      .stack-section {
-        padding: 130px 0;
-        background: var(--primary);
-        position: relative;
-      }
-      .stack-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-        gap: 18px;
-        margin-top: 60px;
-      }
-      .stack-tile {
-        position: relative;
-        aspect-ratio: 1 / 1.1;
-        background: var(--accent);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        padding: 2px;
-        transition: all 0.35s ease;
-      }
-      .stack-tile:hover { transform: translateY(-6px); }
-      .stack-tile .tile-inner {
-        width: 100%;
-        height: 100%;
-        background: var(--dark);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
-        text-align: center;
-        padding: 12px;
-        transition: background 0.35s ease;
-      }
-      .stack-tile:hover .tile-inner { background: var(--panel); }
-      .stack-tile i {
-        font-size: 1.8rem;
-        color: var(--accent);
-      }
-      .stack-tile span {
-        font-size: 0.72rem;
-        text-transform: uppercase;
-        letter-spacing: 1.5px;
-        color: var(--ink);
-      }
-
       /* ── CTA Section ── */
       .cta-section {
         padding: 140px 0;
@@ -976,9 +929,6 @@
               <a class="nav-link" href="#showcase">Inside</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" href="#stack">Stack</a>
-            </li>
-            <li class="nav-item">
               <a class="nav-link" href="#cta">Access</a>
             </li>
           </ul>
@@ -1130,11 +1080,11 @@
             <div class="feature-card">
               <span class="feature-tag">04 · Intake</span>
               <div class="feature-icon-hex"><i class="fab fa-whatsapp"></i></div>
-              <h3>WhatsApp Integration</h3>
+              <h3>WhatsApp Lead Capture</h3>
               <p>
-                Plug into the WhatsApp Business API. Inbound messages auto-create
-                contacts and the built-in NLP engine extracts budget, beds, and
-                location preferences from natural language.
+                Connect WhatsApp and let inbound messages create contacts on
+                their own. LeadHive reads the message and pulls out budget,
+                bedrooms, and location — no typing required.
               </p>
             </div>
           </div>
@@ -1181,22 +1131,22 @@
           <div class="step-card">
             <div class="step-hex"><span>01</span></div>
             <h3>Set up the hive</h3>
-            <p>Register through Ory Kratos. Each agent gets isolated, secure data — no shared tables, no leaks.</p>
+            <p>Create your account in seconds. Your listings and contacts are private to you — nothing shared, nothing leaked.</p>
           </div>
           <div class="step-card">
             <div class="step-hex"><span>02</span></div>
             <h3>Stock the cells</h3>
-            <p>Add properties manually, scrape from listing sites, or hand a watchlist URL to the auto-importer.</p>
+            <p>Add properties manually, paste a listing link to auto-import, or let LeadHive watch sources for fresh stock.</p>
           </div>
           <div class="step-card">
             <div class="step-hex"><span>03</span></div>
             <h3>Welcome the bees</h3>
-            <p>Add contacts directly, import a CSV, or let WhatsApp create them with NLP-extracted preferences.</p>
+            <p>Add contacts directly, bulk-import them, or let WhatsApp create them with their preferences already filled in.</p>
           </div>
           <div class="step-card">
             <div class="step-hex"><span>04</span></div>
             <h3>Harvest the deal</h3>
-            <p>Auto-matching pairs contacts to properties. Follow notifications, close deals, repeat.</p>
+            <p>LeadHive pairs the right contacts with the right properties. Follow the notifications, close the deal, repeat.</p>
           </div>
         </div>
       </div>
@@ -1219,7 +1169,7 @@
                 <i class="fas fa-bolt"></i>
                 <div>
                   <strong>Live match feed</strong>
-                  <span>New listings and inbound leads cross-check the database in real time.</span>
+                  <span>New listings and inbound leads check against your existing contacts in real time.</span>
                 </div>
               </li>
               <li>
@@ -1232,15 +1182,15 @@
               <li>
                 <i class="fas fa-shield-halved"></i>
                 <div>
-                  <strong>Per-user isolation</strong>
-                  <span>Each agent's data is sandboxed at the database row level.</span>
+                  <strong>Private by design</strong>
+                  <span>Your listings, contacts, and conversations stay yours alone.</span>
                 </div>
               </li>
               <li>
-                <i class="fas fa-server"></i>
+                <i class="fas fa-bolt"></i>
                 <div>
-                  <strong>Self-hosted by default</strong>
-                  <span>One Docker Compose file. Your VPS, your data, your rules.</span>
+                  <strong>Ready in minutes</strong>
+                  <span>Sign in, add a listing, send a WhatsApp — you're already working.</span>
                 </div>
               </li>
             </ul>
@@ -1302,56 +1252,6 @@
       </div>
     </section>
 
-    <!-- Tech Stack -->
-    <section id="stack" class="stack-section">
-      <div class="container">
-        <div class="section-header text-center">
-          <div class="hex-eyebrow" style="justify-content:center;">Under the comb</div>
-          <h2 class="section-title" style="display:inline-block">Production-grade engineering</h2>
-          <p class="section-subtitle">Boring tech, picked on purpose</p>
-        </div>
-
-        <div class="stack-grid">
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fas fa-mobile-alt"></i>
-              <span>Flutter Web</span>
-            </div>
-          </div>
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fas fa-server"></i>
-              <span>Go API</span>
-            </div>
-          </div>
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fas fa-shield-alt"></i>
-              <span>Ory Kratos</span>
-            </div>
-          </div>
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fas fa-database"></i>
-              <span>PostgreSQL</span>
-            </div>
-          </div>
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fas fa-network-wired"></i>
-              <span>nginx</span>
-            </div>
-          </div>
-          <div class="stack-tile">
-            <div class="tile-inner">
-              <i class="fab fa-docker"></i>
-              <span>Docker</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
     <!-- CTA Section -->
     <section id="cta" class="cta-section">
       <div class="container position-relative">
@@ -1360,17 +1260,17 @@
           <h2 class="section-title" style="display:inline-block">Ready to move into the hive?</h2>
           <p class="lead">
             Stop juggling spreadsheets and missed WhatsApp threads. LeadHive
-            ships as a single Docker Compose file — deploy in minutes, own your
-            data forever.
+            brings every lead, listing, and follow-up under one roof — start in
+            minutes.
           </p>
         </div>
 
         <ul class="cta-checklist">
-          <li><i class="fas fa-check"></i> Self-hosted &amp; private</li>
-          <li><i class="fas fa-check"></i> Per-user data isolation</li>
-          <li><i class="fas fa-check"></i> WhatsApp NLP built in</li>
-          <li><i class="fas fa-check"></i> Auto-matching engine</li>
-          <li><i class="fas fa-check"></i> One-command deploy</li>
+          <li><i class="fas fa-check"></i> Private to you</li>
+          <li><i class="fas fa-check"></i> WhatsApp leads, captured automatically</li>
+          <li><i class="fas fa-check"></i> Buyers matched to listings instantly</li>
+          <li><i class="fas fa-check"></i> Notifications when it matters</li>
+          <li><i class="fas fa-check"></i> Up and running in minutes</li>
         </ul>
 
         <div class="cta-buttons">
@@ -1497,7 +1397,7 @@
       }
 
       // Scroll reveal
-      const reveals = document.querySelectorAll(".feature-card, .step-card, .stack-tile, .showcase-list li");
+      const reveals = document.querySelectorAll(".feature-card, .step-card, .showcase-list li");
       const revealOnScroll = () => {
         const trigger = window.innerHeight * 0.85;
         reveals.forEach((el, i) => {

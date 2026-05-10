@@ -89,30 +89,17 @@
         background: var(--primary);
       }
       .leadhive-page .loader-logo {
-        width: 110px;
-        height: 124px;
-        background: var(--accent);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        width: 120px;
+        height: 130px;
         display: flex;
         align-items: center;
         justify-content: center;
+        animation: floatHex 3s ease-in-out infinite;
       }
-      .leadhive-page .loader-logo::before {
-        content: '';
-        width: 92px;
-        height: 104px;
-        background: var(--primary);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-        position: absolute;
-      }
-      .leadhive-page .loader-logo span {
-        position: relative;
-        z-index: 1;
-        font-family: 'Playfair Display', serif;
-        font-size: 1.4rem;
-        font-weight: 700;
-        color: var(--accent);
-        letter-spacing: 1px;
+      .leadhive-page .loader-logo img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
 
       /* ── Navigation ── */
@@ -258,7 +245,7 @@
         transform: translateY(-50%);
         width: 520px;
         height: 600px;
-        background-image: url('images/leadhive/icon-hex.png');
+        background-image: url('images/leadhive/logo-hex-script.png');
         background-repeat: no-repeat;
         background-size: contain;
         background-position: center;
@@ -807,18 +794,17 @@
       }
       .cta-section .container { position: relative; z-index: 1; }
       .cta-section .cta-hex {
-        width: 84px; height: 92px;
+        width: 96px; height: 104px;
         margin: 0 auto 28px;
-        background: var(--accent);
-        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
         display: flex;
         align-items: center;
         justify-content: center;
-        font-family: 'Playfair Display', serif;
-        font-weight: 700;
-        font-size: 1.6rem;
-        color: var(--primary);
-        letter-spacing: -1px;
+        animation: floatHex 4s ease-in-out infinite;
+      }
+      .cta-section .cta-hex img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
       .cta-section .section-title {
         font-size: 3.2rem;
@@ -861,6 +847,14 @@
         font-family: 'Playfair Display', serif;
         font-weight: 700;
         color: var(--ink);
+        display: inline-flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .leadhive-page .footer .footer-logo a img {
+        width: 38px;
+        height: 42px;
+        object-fit: contain;
       }
       .leadhive-page .footer .footer-logo .brand-dot { color: var(--accent); }
       .leadhive-page .footer .footer-text,
@@ -933,7 +927,7 @@
       content="Capture leads via WhatsApp, auto-match buyers to listings, and close deals from a single warm-themed dashboard."
     />
     <meta property="og:url" content="https://reverdesigns.art/leadhive.html" />
-    <meta property="og:image" content="https://reverdesigns.art/images/leadhive/icon-hex.png" />
+    <meta property="og:image" content="https://reverdesigns.art/images/leadhive/logo-hex-script.png" />
     <meta name="twitter:card" content="summary_large_image" />
   </head>
 
@@ -941,7 +935,7 @@
     <!-- Loading Animation -->
     <div class="loader">
       <div class="loader-logo">
-        <span>LH</span>
+        <img src="images/leadhive/logo-hex-script.png" alt="LeadHive" />
       </div>
     </div>
 
@@ -950,7 +944,7 @@
       <div class="container">
         <a class="navbar-brand" href="index.html">
           <span class="brand-mark">
-            <img src="images/leadhive/icon-hex.png" alt="LeadHive" />
+            <img src="images/leadhive/logo-hex-script.png" alt="LeadHive" />
           </span>
           LeadHive<span class="brand-dot">.</span>
         </a>
@@ -1007,9 +1001,8 @@
             <div class="col-lg-6">
               <div class="hex-eyebrow">Real Estate CRM</div>
               <h1 class="display-1">
-                Capture leads.<br />
-                Match deals.<br />
-                <span class="accent-word">Close faster.</span>
+                Match Deals.<br />
+                <span class="accent-word">Close Faster.</span>
               </h1>
               <p class="lead">
                 LeadHive is the warm-themed CRM for real estate agents who let
@@ -1358,7 +1351,7 @@
     <!-- CTA Section -->
     <section id="cta" class="cta-section">
       <div class="container position-relative">
-        <div class="cta-hex">LH</div>
+        <div class="cta-hex"><img src="images/leadhive/logo-hex-script.png" alt="LeadHive" /></div>
         <div class="section-header">
           <h2 class="section-title" style="display:inline-block">Ready to move into the hive?</h2>
           <p class="lead">
@@ -1377,8 +1370,10 @@
         </ul>
 
         <div class="cta-buttons">
-          <a href="mailto:carmanillustrations@gmail.com?subject=LeadHive%20Access" class="btn btn-primary">Request Access</a>
-          <a href="index.html" class="btn btn-outline">Back to Portfolio</a>
+          <a href="files/leadhive.apk" class="btn btn-primary" download>
+            <i class="fab fa-android" style="margin-right:10px;"></i>Download for Android
+          </a>
+          <a href="mailto:carmanillustrations@gmail.com?subject=LeadHive%20Access" class="btn btn-outline">Request Access</a>
         </div>
       </div>
     </section>
@@ -1389,7 +1384,10 @@
         <div class="row">
           <div class="col-md-6">
             <div class="footer-logo">
-              <a href="index.html">LeadHive<span class="brand-dot">.</span></a>
+              <a href="index.html">
+                <img src="images/leadhive/logo-hex-script.png" alt="LeadHive" />
+                LeadHive<span class="brand-dot">.</span>
+              </a>
             </div>
             <p class="footer-text">
               Real Estate CRM — designed and built by Carman Terblanche.

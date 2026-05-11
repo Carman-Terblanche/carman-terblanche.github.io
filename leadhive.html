@@ -65,6 +65,15 @@
       body.leadhive-page {
         background-color: var(--primary);
         color: var(--ink);
+        overflow-x: hidden;
+      }
+      html:has(body.leadhive-page) {
+        overflow-x: hidden;
+      }
+      .leadhive-page section,
+      .leadhive-page .workflow-section,
+      .leadhive-page .showcase-section {
+        overflow-x: clip;
       }
 
       .leadhive-page h1,

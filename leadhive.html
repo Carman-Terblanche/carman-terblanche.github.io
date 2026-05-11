@@ -834,6 +834,35 @@
       .leadhive-page .footer .footer-social a:hover {
         color: var(--accent);
       }
+      .leadhive-page .footer .footer-quicklinks {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+      }
+      .leadhive-page .footer .footer-quicklinks .footer-title {
+        position: relative;
+        display: inline-block;
+      }
+      .leadhive-page .footer .footer-quicklinks .footer-title::after {
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      .leadhive-page .footer .footer-quicklinks .footer-links {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        text-align: center;
+      }
+      .leadhive-page .footer .footer-quicklinks .footer-links li {
+        display: inline-block;
+        margin: 0 14px;
+      }
+      @media (max-width: 767px) {
+        .leadhive-page .footer .footer-quicklinks {
+          margin-top: 30px;
+        }
+      }
 
       /* ── Back to top ── */
       .leadhive-page .back-to-top {
@@ -846,6 +875,15 @@
 
       /* ── Responsive ── */
       @media (max-width: 991px) {
+        .leadhive-page .hero { min-height: auto; }
+        .leadhive-page .hero-content {
+          min-height: auto;
+          padding-top: 130px;
+          padding-bottom: 60px;
+        }
+        .leadhive-page .hero .row.align-items-center {
+          align-items: flex-start !important;
+        }
         .leadhive-page .hero .display-1 { font-size: 3.2rem; }
         .leadhive-page .hero-visual { margin-top: 70px; }
         .workflow-section .workflow-grid {
@@ -859,6 +897,9 @@
         .browser-mockup .sidebar { display: none; }
       }
       @media (max-width: 576px) {
+        .leadhive-page .hero-content {
+          padding-top: 120px;
+        }
         .leadhive-page .hero .display-1 { font-size: 2.4rem; }
         .leadhive-page .hero .lead { font-size: 1rem; }
         .leadhive-page .hero-meta { flex-wrap: wrap; gap: 18px; }
@@ -874,7 +915,6 @@
         .features-section,
         .workflow-section,
         .showcase-section,
-        .stack-section,
         .cta-section { padding: 90px 0; }
       }
     </style>
@@ -1297,7 +1337,7 @@
               Real Estate CRM — designed and built by Carman Terblanche.
             </p>
           </div>
-          <div class="col-md-3">
+          <div class="col-md-6 footer-quicklinks text-center">
             <h4 class="footer-title">Quick Links</h4>
             <ul class="footer-links">
               <li><a href="index.html">Portfolio</a></li>

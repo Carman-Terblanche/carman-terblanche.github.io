@@ -873,6 +873,147 @@
         }
       }
 
+      /* ── Install Warning Modal ── */
+      .leadhive-page .install-modal .modal-content {
+        background: linear-gradient(160deg, var(--panel) 0%, var(--dark) 100%);
+        border: 1px solid rgba(232, 169, 57, 0.25);
+        border-radius: 6px;
+        color: var(--ink);
+        box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6);
+      }
+      .leadhive-page .install-modal .modal-header {
+        border-bottom: 1px solid rgba(245, 234, 212, 0.08);
+        padding: 22px 28px;
+        align-items: center;
+        gap: 14px;
+      }
+      .leadhive-page .install-modal .modal-header .warn-hex {
+        width: 42px;
+        height: 48px;
+        background: var(--accent);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: var(--primary);
+        font-size: 1.05rem;
+        flex-shrink: 0;
+      }
+      .leadhive-page .install-modal .modal-title {
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        color: var(--ink);
+        font-size: 1.35rem;
+        line-height: 1.2;
+      }
+      .leadhive-page .install-modal .modal-title small {
+        display: block;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 0.7rem;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        color: var(--accent);
+        margin-bottom: 6px;
+        font-weight: 600;
+      }
+      .leadhive-page .install-modal .btn-close {
+        filter: invert(85%) sepia(15%) saturate(280%) hue-rotate(2deg);
+        opacity: 0.7;
+      }
+      .leadhive-page .install-modal .btn-close:hover { opacity: 1; }
+      .leadhive-page .install-modal .modal-body {
+        padding: 24px 28px 8px;
+      }
+      .leadhive-page .install-modal .modal-intro {
+        color: var(--ink-muted);
+        font-size: 0.95rem;
+        line-height: 1.65;
+        margin-bottom: 22px;
+        padding: 14px 16px;
+        background: rgba(232, 169, 57, 0.08);
+        border-left: 3px solid var(--accent);
+      }
+      .leadhive-page .install-modal .modal-intro strong { color: var(--ink); }
+      .leadhive-page .install-modal .install-steps {
+        list-style: none;
+        counter-reset: install;
+        padding: 0;
+        margin: 0;
+      }
+      .leadhive-page .install-modal .install-steps li {
+        counter-increment: install;
+        position: relative;
+        padding: 16px 0 16px 56px;
+        border-bottom: 1px solid rgba(245, 234, 212, 0.06);
+      }
+      .leadhive-page .install-modal .install-steps li:last-child { border-bottom: 0; }
+      .leadhive-page .install-modal .install-steps li::before {
+        content: counter(install, decimal-leading-zero);
+        position: absolute;
+        left: 0;
+        top: 14px;
+        width: 40px;
+        height: 44px;
+        background: transparent;
+        border: 2px solid var(--accent);
+        clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Playfair Display', serif;
+        font-weight: 700;
+        font-size: 0.85rem;
+        color: var(--accent);
+      }
+      .leadhive-page .install-modal .install-steps li h5 {
+        font-size: 1rem;
+        font-weight: 600;
+        margin: 0 0 6px;
+        color: var(--ink);
+      }
+      .leadhive-page .install-modal .install-steps li p {
+        margin: 0;
+        font-size: 0.88rem;
+        line-height: 1.65;
+        color: var(--ink-muted);
+      }
+      .leadhive-page .install-modal .install-steps li p .key {
+        background: rgba(232, 169, 57, 0.12);
+        color: var(--accent);
+        padding: 1px 8px;
+        border-radius: 3px;
+        font-size: 0.8rem;
+        letter-spacing: 0.3px;
+        white-space: nowrap;
+      }
+      .leadhive-page .install-modal .modal-footer {
+        border-top: 1px solid rgba(245, 234, 212, 0.08);
+        padding: 18px 28px;
+        gap: 10px;
+      }
+      .leadhive-page .install-modal .modal-footer .btn {
+        padding: 12px 26px;
+        font-size: 0.78rem;
+        margin: 0;
+      }
+      @media (max-width: 576px) {
+        .leadhive-page .install-modal .modal-header,
+        .leadhive-page .install-modal .modal-body,
+        .leadhive-page .install-modal .modal-footer {
+          padding-left: 20px;
+          padding-right: 20px;
+        }
+        .leadhive-page .install-modal .modal-title { font-size: 1.15rem; }
+        .leadhive-page .install-modal .install-steps li {
+          padding-left: 48px;
+        }
+        .leadhive-page .install-modal .install-steps li::before {
+          width: 34px;
+          height: 38px;
+          font-size: 0.75rem;
+        }
+      }
+
       /* ── Back to top ── */
       .leadhive-page .back-to-top {
         background: var(--accent);
@@ -1336,7 +1477,7 @@
         </ul>
 
         <div class="cta-buttons">
-          <a href="files/leadhive.apk" class="btn btn-primary" download>
+          <a href="files/leadhive.apk" class="btn btn-primary" id="androidDownloadBtn" download>
             <i class="fab fa-android" style="margin-right:10px;"></i>Download for Android
           </a>
           <a href="mailto:carmanillustrations@gmail.com?subject=LeadHive%20Access" class="btn btn-outline">Request Access</a>
@@ -1393,6 +1534,55 @@
         </div>
       </div>
     </footer>
+
+    <!-- Android Install Warning Modal -->
+    <div class="modal fade install-modal" id="androidInstallModal" tabindex="-1" aria-labelledby="androidInstallModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-lg">
+        <div class="modal-content">
+          <div class="modal-header">
+            <div class="warn-hex"><i class="fas fa-shield-halved"></i></div>
+            <h5 class="modal-title" id="androidInstallModalLabel">
+              <small>Before you install</small>
+              Android will warn you — that's expected
+            </h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <p class="modal-intro">
+              LeadHive ships as a direct <strong>APK</strong> outside the Google Play Store, so Android's <strong>Play Protect</strong> will flag it as "unsafe" and your browser may block the install. The app is safe — follow the steps below to install it.
+            </p>
+            <ol class="install-steps">
+              <li>
+                <h5>Tap <span class="key">Download anyway</span> in the browser</h5>
+                <p>Chrome may say "this file may harm your device". This warning is shown for every APK that isn't from the Play Store. Tap <span class="key">Download anyway</span> (or <span class="key">Keep</span> on some browsers) to save the file.</p>
+              </li>
+              <li>
+                <h5>Allow installs from your browser</h5>
+                <p>When you open the APK, Android will ask you to allow installs from this source. Tap <span class="key">Settings</span> → enable <span class="key">Allow from this source</span> → return to the install prompt.</p>
+              </li>
+              <li>
+                <h5>Bypass the Play Protect scan</h5>
+                <p>Play Protect will say "App not scanned" or "App may be unsafe". Tap <span class="key">More details</span> → <span class="key">Install anyway</span>. If there is no "Install anyway" option, tap <span class="key">Don't send</span> first, then proceed.</p>
+              </li>
+              <li>
+                <h5>Optional — disable Play Protect for the install</h5>
+                <p>If Play Protect refuses to let the install proceed, open the <span class="key">Play Store</span> app → tap your profile picture → <span class="key">Play Protect</span> → <span class="key">Settings</span> (gear icon) → turn off <span class="key">Scan apps with Play Protect</span>. Re-enable it after LeadHive is installed.</p>
+              </li>
+              <li>
+                <h5>Open LeadHive</h5>
+                <p>Once installed, the LeadHive icon appears in your app drawer. Sign in with the credentials you were given and you're in.</p>
+              </li>
+            </ol>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-outline" data-bs-dismiss="modal">Cancel</button>
+            <button type="button" class="btn btn-primary" id="proceedDownloadBtn">
+              <i class="fab fa-android" style="margin-right:10px;"></i>I understand — Download APK
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <!-- Back to Top Button -->
     <a href="#" class="back-to-top" id="backToTop">
@@ -1456,6 +1646,29 @@
         const lenis = new Lenis({ smooth: true });
         function raf(time) { lenis.raf(time); requestAnimationFrame(raf); }
         requestAnimationFrame(raf);
+      }
+
+      // Android install warning modal — intercept download click
+      const androidBtn = document.getElementById("androidDownloadBtn");
+      const proceedBtn = document.getElementById("proceedDownloadBtn");
+      const installModalEl = document.getElementById("androidInstallModal");
+      if (androidBtn && installModalEl && typeof bootstrap !== "undefined") {
+        const installModal = new bootstrap.Modal(installModalEl);
+        androidBtn.addEventListener("click", (e) => {
+          if (androidBtn.dataset.confirmed === "1") {
+            androidBtn.dataset.confirmed = "";
+            return;
+          }
+          e.preventDefault();
+          installModal.show();
+        });
+        if (proceedBtn) {
+          proceedBtn.addEventListener("click", () => {
+            installModal.hide();
+            androidBtn.dataset.confirmed = "1";
+            androidBtn.click();
+          });
+        }
       }
 
       // Scroll reveal

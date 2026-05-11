@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(mkdir -p \"/Users/carmanterblanche/GitHub/carman-terblanche.github.io/images/leadhive\")",
+      "Bash(cp \"/Users/carmanterblanche/Downloads/LeadHive App Icon.png\" \"/Users/carmanterblanche/GitHub/carman-terblanche.github.io/images/leadhive/icon-hex.png\")",
+      "Bash(cp \"/Users/carmanterblanche/Downloads/LeadHive App Icon transparent orange.png\" \"/Users/carmanterblanche/GitHub/carman-terblanche.github.io/images/leadhive/icon-script.png\")",
+      "Bash(cp \"/Users/carmanterblanche/Downloads/leadhive logo-2.png\" \"/Users/carmanterblanche/GitHub/carman-terblanche.github.io/images/leadhive/logo-hex-script.png\")",
+      "Bash(git rm *)",
+      "Bash(git commit -m ' *)",
+      "Bash(git add *)"
+    ]
+  }
+}

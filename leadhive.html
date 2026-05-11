@@ -875,17 +875,24 @@
 
       /* ── Responsive ── */
       @media (max-width: 991px) {
-        .leadhive-page .hero { min-height: auto; }
+        .leadhive-page .hero {
+          min-height: 0;
+          height: auto;
+        }
         .leadhive-page .hero-content {
-          min-height: auto;
-          padding-top: 130px;
+          display: block;
+          min-height: 0;
+          padding-top: 160px;
           padding-bottom: 60px;
         }
+        .leadhive-page .hero .row,
         .leadhive-page .hero .row.align-items-center {
           align-items: flex-start !important;
         }
         .leadhive-page .hero .display-1 { font-size: 3.2rem; }
         .leadhive-page .hero-visual { margin-top: 70px; }
+        .leadhive-page .hero::after { display: none; }
+        .leadhive-page .scroll-down { display: none; }
         .workflow-section .workflow-grid {
           grid-template-columns: repeat(2, 1fr);
           gap: 40px 20px;
@@ -898,9 +905,15 @@
       }
       @media (max-width: 576px) {
         .leadhive-page .hero-content {
-          padding-top: 120px;
+          padding-top: 150px;
+          padding-bottom: 50px;
         }
-        .leadhive-page .hero .display-1 { font-size: 2.4rem; }
+        .leadhive-page .hero .display-1 {
+          font-size: 2.4rem;
+        }
+        .leadhive-page .hero .display-1 .line {
+          white-space: normal;
+        }
         .leadhive-page .hero .lead { font-size: 1rem; }
         .leadhive-page .hero-meta { flex-wrap: wrap; gap: 18px; }
         .workflow-section .workflow-grid {

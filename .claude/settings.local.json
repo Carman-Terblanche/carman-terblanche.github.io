@@ -7,7 +7,18 @@
       "Bash(cp \"/Users/carmanterblanche/Downloads/leadhive logo-2.png\" \"/Users/carmanterblanche/GitHub/carman-terblanche.github.io/images/leadhive/logo-hex-script.png\")",
       "Bash(git rm *)",
       "Bash(git commit -m ' *)",
-      "Bash(git add *)"
+      "Bash(git add *)",
+      "Bash(cp ~/Desktop/\"Screenshot 2026-06-17 at 13.55.55.png\" \"images/social media/rise-stimming.png\")",
+      "Bash(cp ~/Desktop/\"Screenshot 2026-06-17 at 13.55.15.png\" \"images/social media/rise-meltdowns.png\")",
+      "Bash(sips --help)",
+      "Bash(sips --formats)",
+      "Bash(sips -g format \"images/social media/rise-stimming.png\")",
+      "Bash(sips -s format webp --resampleWidth 800 rise-stimming.png --out rise-stimming.webp)",
+      "Bash(sips -Z 800 -s format webp rise-stimming.png --out /tmp/test.webp)",
+      "Bash(echo \"rc=$?\")",
+      "Read(//tmp/**)",
+      "Bash(docker info *)",
+      "Bash(nerdctl info *)"
     ]
   }
 }

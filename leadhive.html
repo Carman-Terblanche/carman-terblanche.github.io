@@ -10,7 +10,7 @@
     <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
     <meta
       name="description"
-      content="LeadHive — a full-stack Real Estate CRM for agents. Capture leads, auto-match buyers to listings, and close deals from a single warm-themed dashboard."
+      content="LeadHive — a full-stack Real Estate CRM for agents. Capture leads, auto-match buyers to listings, run email campaigns, and close deals from a single warm-themed dashboard."
     />
 
     <link rel="preload" href="css/style.css" as="style" />
@@ -740,6 +740,92 @@
         border-radius: 10px;
       }
 
+      /* ── Email Marketing section ── */
+      .email-section {
+        padding: 130px 0;
+        background: var(--primary);
+        position: relative;
+      }
+      .email-mockup .browser-body {
+        grid-template-columns: 1fr;
+      }
+      .email-mockup .panel-grid { grid-template-columns: repeat(4, 1fr); }
+      .email-mockup .stat-tile { padding: 14px 12px; }
+      .email-mockup .stat-tile .v { font-size: 1.3rem; }
+      .email-mockup .quota {
+        margin-top: 14px;
+        font-size: 0.68rem;
+        color: var(--ink-muted);
+      }
+      .email-mockup .quota .track {
+        height: 6px;
+        background: rgba(245, 234, 212, 0.08);
+        border-radius: 3px;
+        margin-top: 6px;
+        overflow: hidden;
+      }
+      .email-mockup .quota .fill {
+        height: 100%;
+        width: 25%;
+        background: var(--accent);
+      }
+      @media (max-width: 576px) {
+        .email-mockup .panel-grid { grid-template-columns: repeat(2, 1fr); }
+      }
+      .email-mockup .campaign-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 4px;
+      }
+      .email-mockup .campaign-head .title {
+        font-family: 'Playfair Display', serif;
+        font-size: 1.05rem;
+        color: var(--ink);
+      }
+      .email-mockup .campaign-head .status {
+        font-size: 0.6rem;
+        text-transform: uppercase;
+        letter-spacing: 1.5px;
+        padding: 3px 10px;
+        background: rgba(232, 169, 57, 0.18);
+        color: var(--accent);
+        border-radius: 10px;
+        white-space: nowrap;
+      }
+      .email-mockup .email-preview {
+        background: rgba(0, 0, 0, 0.25);
+        border-radius: 4px;
+        padding: 16px;
+        border-left: 3px solid var(--accent);
+      }
+      .email-mockup .email-preview .meta {
+        font-size: 0.72rem;
+        color: var(--ink-muted);
+        margin-bottom: 4px;
+      }
+      .email-mockup .email-preview .meta strong { color: var(--ink); font-weight: 600; }
+      .email-mockup .email-preview .listing {
+        display: grid;
+        grid-template-columns: 70px 1fr;
+        gap: 12px;
+        margin-top: 12px;
+        align-items: center;
+      }
+      .email-mockup .email-preview .thumb {
+        height: 52px;
+        border-radius: 3px;
+        background: linear-gradient(135deg, rgba(232, 169, 57, 0.45), rgba(232, 169, 57, 0.08));
+      }
+      .email-mockup .email-preview .listing .bar {
+        height: 6px;
+        background: rgba(245, 234, 212, 0.12);
+        border-radius: 3px;
+        margin: 6px 0;
+      }
+      .email-mockup .email-preview .listing .bar.short { width: 45%; }
+
       /* ── CTA Section ── */
       .cta-section {
         padding: 140px 0;
@@ -1078,6 +1164,7 @@
         .features-section,
         .workflow-section,
         .showcase-section,
+        .email-section,
         .cta-section { padding: 90px 0; }
       }
     </style>
@@ -1085,7 +1172,7 @@
     <meta property="og:title" content="LeadHive | Real Estate CRM" />
     <meta
       property="og:description"
-      content="Capture leads, auto-match buyers to listings, and close deals from a single warm-themed dashboard."
+      content="Capture leads, auto-match buyers to listings, run email campaigns, and close deals from a single warm-themed dashboard."
     />
     <meta property="og:url" content="https://reverdesigns.art/leadhive.html" />
     <meta property="og:image" content="https://reverdesigns.art/images/leadhive/logo-hex-script.png" />
@@ -1132,6 +1219,9 @@
               <a class="nav-link" href="#showcase">Inside</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#email">Email</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#cta">Access</a>
             </li>
           </ul>
@@ -1164,7 +1254,7 @@
               </h1>
               <p class="lead">
                 Real Estate CRM for agents. Listings, contacts,
-                and matches — all in one hive.
+                matches, and email campaigns — all in one hive.
               </p>
               <div class="cta-buttons">
                 <a href="https://leadhive.reverdesigns.art/updates/leadhive-0.4.2+25.apk" class="btn btn-primary" download><i class="fab fa-android" style="margin-right:10px;"></i>Download for Android</a>
@@ -1413,6 +1503,7 @@
                   <div class="side-item"><i class="fas fa-users"></i> Contacts</div>
                   <div class="side-item"><i class="fas fa-link"></i> Matches</div>
                   <div class="side-item"><i class="fas fa-comment-dots"></i> Messages</div>
+                  <div class="side-item"><i class="fas fa-envelope"></i> Campaigns</div>
                   <div class="side-item"><i class="fas fa-globe"></i> Sources</div>
                   <div class="side-item"><i class="fas fa-cog"></i> Settings</div>
                 </div>
@@ -1456,6 +1547,110 @@
       </div>
     </section>
 
+    <!-- Email Marketing -->
+    <section id="email" class="showcase-section email-section">
+      <div class="container">
+        <div class="row align-items-center g-5">
+          <div class="col-lg-7 order-2 order-lg-1">
+            <div class="browser-mockup email-mockup">
+              <div class="browser-bar">
+                <span class="dot"></span><span class="dot"></span><span class="dot"></span>
+                <div class="url">leadhive.app / campaigns</div>
+              </div>
+              <div class="browser-body">
+                <div class="panel-grid">
+                  <div class="list-tile">
+                    <div class="campaign-head">
+                      <div class="title">New in Marbella — this week</div>
+                      <span class="status">Sent</span>
+                    </div>
+                    <div class="email-preview">
+                      <div class="meta"><strong>Template:</strong> New Listings · Warm</div>
+                      <div class="meta"><strong>Subject:</strong> 2 new homes in Marbella this week</div>
+                      <div class="listing">
+                        <div class="thumb"></div>
+                        <div>
+                          <div class="bar"></div>
+                          <div class="bar short"></div>
+                        </div>
+                      </div>
+                      <div class="listing">
+                        <div class="thumb"></div>
+                        <div>
+                          <div class="bar"></div>
+                          <div class="bar short"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="quota">
+                      2,480 / 10,000 emails sent this month
+                      <div class="track"><div class="fill"></div></div>
+                    </div>
+                  </div>
+                  <div class="stat-tile">
+                    <div class="v">58%</div>
+                    <div class="l">Opens</div>
+                  </div>
+                  <div class="stat-tile">
+                    <div class="v">14%</div>
+                    <div class="l">Clicks</div>
+                  </div>
+                  <div class="stat-tile">
+                    <div class="v">1.2%</div>
+                    <div class="l">Bounces</div>
+                  </div>
+                  <div class="stat-tile">
+                    <div class="v">0.4%</div>
+                    <div class="l">Unsubs</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5 order-1 order-lg-2 showcase-text">
+            <div class="hex-eyebrow">Email Marketing</div>
+            <h2>Email campaigns, right where your contacts live</h2>
+            <p class="lead">
+              Your contacts are already in the hive, so you don't need a
+              separate email tool. Pick a template or design your own, send
+              it, and see exactly how it performed.
+            </p>
+            <ul class="showcase-list">
+              <li>
+                <i class="fas fa-envelope-open-text"></i>
+                <div>
+                  <strong>Ready-made templates</strong>
+                  <span>Choose from a library of templates and have a polished campaign ready in minutes.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-pen-ruler"></i>
+                <div>
+                  <strong>Your own templates</strong>
+                  <span>Design templates that match your brand, save them, and reuse them for every campaign.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-chart-line"></i>
+                <div>
+                  <strong>Performance insights</strong>
+                  <span>Track opens, clicks, bounces, and unsubscribes for every campaign you send.</span>
+                </div>
+              </li>
+              <li>
+                <i class="fas fa-paper-plane"></i>
+                <div>
+                  <strong>10,000 emails a month</strong>
+                  <span>Send up to 10,000 emails every month, straight from LeadHive.</span>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- CTA Section -->
     <section id="cta" class="cta-section">
       <div class="container position-relative">
@@ -1473,6 +1668,7 @@
           <li><i class="fas fa-check"></i> Private to you</li>
           <li><i class="fas fa-check"></i> Leads captured automatically</li>
           <li><i class="fas fa-check"></i> Buyers matched to listings instantly</li>
+          <li><i class="fas fa-check"></i> Email campaigns built in</li>
           <li><i class="fas fa-check"></i> Notifications when it matters</li>
           <li><i class="fas fa-check"></i> Up and running in minutes</li>
         </ul>
